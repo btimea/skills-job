@@ -1,0 +1,111 @@
+<html lang="en">
+ 
+<head>
+ 
+    <title></title>
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <!-- <link href="blog.css" rel="stylesheet">
+  -->
+ 
+</head>
+ 
+<body ng-controller="AddArticleCtrl">
+
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+                <!-- <a class="blog-nav-item " href="#">Home</a> -->
+                <a class="blog-nav-item" href="#/main">Extragere</a>
+ 
+            </nav>
+        </div>
+    </div>
+ 
+    <div class="container">
+ 
+       <form class="form-horizontal" ng-submit="AddArticle()">
+            <fieldset>
+ 
+                <!-- Form Name -->
+                <legend>Create Article</legend>
+ 
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtid">ID</label>
+                        <input id="txtTitle" name="txtid" ng-model="article.id" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                     <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtgrup">Grup</label>   
+                        <input id="txtTitle" name="txtgrup" ng-model="article.grup" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>    
+                     <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtdata">Data</label>
+                        <input id="txtTitle" name="txtdata" ng-model="article.data" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                     <div class="col-md-4">
+                       <label class="col-md-4 control-label" for="txtnume">Nume</label> 
+                       <input id="txtTitle" name="txtnume" ng-model="article.nume" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtsex">Sex</label>   
+                        <input id="txtTitle" name="txtsex" ng-model="article.sex" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtvarsta">Varsta</label>   
+                        <input id="txtTitle" name="txtvarsta" ng-model="article.varsta" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtclasa">Clasa</label>   
+                        <input id="txtTitle" name="txtclasa" ng-model="article.clasa" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtscoala">Scoala</label>   
+                        <input id="txtTitle" name="txtscoala" ng-model="article.scoala" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtjudet">Judet</label>   
+                        <input id="txtTitle" name="txtjudet" ng-model="article.judet" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtmediu">Mediu</label>   
+                        <input id="txtTitle" name="txtmediu" ng-model="article.mediu" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtcnp">CNP</label>   
+                        <input id="txtTitle" name="txtcnp" ng-model="article.cnp" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                     <div class="col-md-4">
+                        <label class="col-md-4 control-label" for="txtemail">E-mail</label>   
+                        <input id="txtTitle" name="txtemail" ng-model="article.email" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                </div>
+ 
+                
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="singlebutton"></label>
+                    <div class="col-md-4">
+                        <input id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit" value="Adaugare" />
+                    </div>
+                </div>
+ 
+            </fieldset>
+        </form>
+ 
+ 
+    </div>
+    <!-- /.container -->
+ 
+    <div class="blog-footer">
+        <p>AngularJS & Firebase Blog App</p>
+ 
+    </div>
+ 
+ 
+ 
+</body>
+ 
+</html>

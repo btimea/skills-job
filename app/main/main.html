@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+ 
+    <title>AngularJS & Firebase Web App</title>
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="blog.css" rel="stylesheet"> -->
+ 
+</head>
+ 
+<body>
+ 
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+               <!--  <a class="blog-nav-item active" href="#/main">Home</a> -->
+               <!--  <a class="blog-nav-item " href="#/addArticle">Editare baza de date</a>
+  -->
+            </nav>
+        </div>
+    </div>
+    <div class="container m-b-xl" ng-controller="MainCtrl" >
+        <div class="page-header">
+            <h1>Skills For Jobs</h1>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-6 col-md-12">
+                <label for="sel1">Selecteaza judet:</label>
+                <select class="form-control" id="sel1" ng-model="search.judet"  ng-options="item for item in judete">
+                    <option value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+
+            <div class="form-group  col-lg-6 col-md-12">
+                <label for="sel1">Select scoala:</label>
+                <select class="form-control" id="sel1" ng-model="search.scoala" ng-options="scoala for scoala in scoli" >
+                    <option value="{{scoala}}">{{scoala}}</option>     
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button type="button" class="btn btn-primary" ng-click="filterIt()">Extrage</button>
+                <button type="button" class="btn btn-primary" ng-csv="winnersData" csv-header="getHeader()" filename="test.csv">Exporta</button>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="col-lg-8 col-lg-offset-2 p-sm"><img src="assets/img/random.gif" alt="Smiley face" height="80" width="718" ng-show="loading"></div>
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="list-group m-t-md" id="filterJResults"  ng-repeat="item in winnersData ">
+                    <div class="list-group-item active">
+                        <h4 class="list-group-item-heading">{{item.nume}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container m-b-xl" ng-controller="AddArticleCtrl">
+       <form class="form-horizontal" ng-submit="AddArticle()">
+            <fieldset>
+                <!-- Form Name -->
+                <p class="lead p-b-sm border-b-sm">Adaugare Elev</p>
+ 
+                <!-- Text input-->
+                <div class="form-group col-md-12">
+                    <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtid">ID</label>
+                        <input id="txtTitle" name="txtid" ng-model="article.id" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                     <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtgrup">Grup</label>   
+                        <input id="txtTitle" name="txtgrup" ng-model="article.grup" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>    
+                     <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtdata">Data</label>
+                        <input id="txtTitle" name="txtdata" ng-model="article.data" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                     <div class="col-md-4">
+                       <label class="col-md-4 pull-left" for="txtnume">Nume</label> 
+                       <input id="txtTitle" name="txtnume" ng-model="article.nume" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtsex">Sex</label>   
+                        <input id="txtTitle" name="txtsex" ng-model="article.sex" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtvarsta">Varsta</label>   
+                        <input id="txtTitle" name="txtvarsta" ng-model="article.varsta" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtclasa">Clasa</label>   
+                        <input id="txtTitle" name="txtclasa" ng-model="article.clasa" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtscoala">Scoala</label>   
+                        <input id="txtTitle" name="txtscoala" ng-model="article.scoala" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtjudet">Judet</label>   
+                        <input id="txtTitle" name="txtjudet" ng-model="article.judet" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtmediu">Mediu</label>   
+                        <input id="txtTitle" name="txtmediu" ng-model="article.mediu" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtcnp">CNP</label>   
+                        <input id="txtTitle" name="txtcnp" ng-model="article.cnp" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                     <div class="col-md-4">
+                        <label class="col-md-4 pull-left" for="txtemail">E-mail</label>   
+                        <input id="txtTitle" name="txtemail" ng-model="article.email" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                </div>
+                <!-- Button -->
+                <div class="form-group col-lg-4 pull-left">
+                    <div class="col-lg-4">
+                        <input id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit" value="Adaugare" />
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="container m-b-xl">
+        <p class="lead p-b-sm border-b-sm">Vizualizare Lista</p>
+        <div class="row">
+            <div class="form-group col-lg-6 col-md-12">
+                <label for="sel1">Selecteaza judet:</label>
+                <select class="form-control" id="sel1" ng-model="search.judet"  ng-options="item for item in judete">
+                    <option value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div class="form-group  col-lg-6 col-md-12">
+                <label for="sel1">Select scoala:</label>
+                <select class="form-control" id="sel1" ng-model="search.scoala" ng-options="scoala for scoala in scoli" >
+                    <option value="{{scoala}}">{{scoala}}</option>     
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">   
+                <button type="button" class="btn btn-primary" ng-csv="castigatori" csv-header="getHeaderCastigatori()" filename="test.csv">Export total</button>
+                 <button type="button" class="btn btn-primary" ng-csv="listAllWinners" csv-header="getHeaderCastigatori()" filename="test.csv">Export </button>
+                <button type="button" class="btn btn-primary" ng-click="ShowAllWinners()">Vizualizeaza</button>
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="list-group m-t-md" id="filterJResults"  ng-repeat="item in listAllWinners">
+                    <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">{{item.nume}}</h4>
+                        <p>{{item.scoala}} </p>
+                        <p>{{item.judet}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>    
+ 
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"></p>
+        </div>
+    </footer>
+ 
+</body>
+ 
+</html>
