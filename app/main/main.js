@@ -1,13 +1,21 @@
 'use strict';
  
-var app = angular.module('myApp.main', ['ngRoute',"firebase",'ngSanitize', 'ngCsv','ngResource'])
+var app = angular.module('myApp.main', ['ui.router',"firebase",'ngSanitize', 'ngCsv','ngResource'])
 
  
-.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/main', {
-        templateUrl: 'main/main.html',
-        controller: 'MainCtrl'
-    });
+.config(['$stateProvider', function($stateProvider) {
+
+   $stateProvider
+    .state('main', {
+      url: "/main",
+      templateUrl: "main/main.html",
+      controller: "MainCtrl",
+      data: {
+        authorization: true,
+        redirectTo: 'login'
+      }
+    })
+    
 }])
  
  
@@ -20,6 +28,7 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
 
   $scope.judete = ["Bihor","Bistrita-Nasaud","Cluj","Hundedoara","Maramures","Salaj","Timis"];
   $scope.search = {}; 
+  $scope.scoliAlese = [];
  
 
   $http.get('main/scoli.json').success(function(data) {
@@ -53,54 +62,66 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
   };
 
 
-  $scope.filterIt = function (){
-   
+  
+
+
+  $scope.filterIt = function (i){
+    if ($scope.scoliAlese.indexOf(i) <=-1){
+      $scope.scoliAlese.push(i);
+
       $scope.loading = true;
       setTimeout(function(){
-      $scope.data.$loaded()
-        .then(function() {
-          $scope.elevi = $scope.data;
-          $scope.filtered = [];
-          $scope.idList = [];
-          $scope.winnersData =[];
-        
+        $scope.data.$loaded()
+          .then(function() {
+            $scope.elevi = $scope.data;
+            $scope.filtered = [];
+            $scope.idList = [];
+            $scope.winnersData =[];
+          
 
-          $scope.elevi.forEach(function(item){
-            if (item.judet === $scope.search.judet && item.scoala === $scope.search.scoala) {
-              $scope.filtered.push(item);
-              $scope.idList.push(item.id);
-            }
-          });
-
-          $scope.winnersId = $scope.shuffle($scope.idList).slice(4,7);
-
-          $scope.filtered.forEach(function(item){
-            $scope.winnersId.forEach(function(winId){
-              if(item.id === winId){
-                $scope.winnersData.push(item);          
+            $scope.elevi.forEach(function(item){
+              if (item.judet === $scope.search.judet && item.scoala === $scope.search.scoala) {
+                $scope.filtered.push(item);
+                $scope.idList.push(item.id);
               }
-            })
-          })
+            });
 
-          return $scope.winnersData;
+            $scope.winnersId = $scope.shuffle($scope.idList).slice(4,7);
 
-      })
-       
-         .finally(function () {
-            // Hide loading spinner whether our call succeeded or failed.
-            $scope.winnersData.forEach(function(item){
-                $scope.castigatori.$add({
-                  nume: item.nume,
-                  scoala: item.scoala,
-                  judet: item.judet
-                });    
+            $scope.filtered.forEach(function(item){
+              $scope.winnersId.forEach(function(winId){
+                if(item.id === winId){
+                  $scope.winnersData.push(item);          
+                }
               })
+            })
 
-            $scope.loading = false;
+            return $scope.winnersData;
 
-          });
+        })
+         
+           .finally(function () {
+              // Hide loading spinner whether our call succeeded or failed.
+              $scope.winnersData.forEach(function(item){
+                  $scope.castigatori.$add({
+                    nume: item.nume,
+                    scoala: item.scoala,
+                    judet: item.judet
+                  });    
+                })
+
+              $scope.loading = false;
+
+            });
         
-    }, 3000)   
+      }, 3000) 
+
+
+    }
+
+    else {
+      alert("Extragerea a fost deja efectuata")
+    }
 
   }
 

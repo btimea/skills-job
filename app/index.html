@@ -11,20 +11,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="justified-nav.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
+<div class="row">
+  <div class="col-lg-12">
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a ui-sref="home">Home</a></li>
+      <li role="presentation"><a ui-sref="regulament">Regulament</a></li>
+       <li role="presentation"><a ui-sref="main">Main</a></li>
+     <!--  <li role="presentation" ng-if= "ui-sref== main" ><a ui-sref="addArticle">Editare</a></li> -->
+      <button type="button" class="btn btn-default navbar-btn pull-right"><a ui-sref="login">Sign In</a></button>
+      <button  ng-click= "onLogout()" type="button" class="btn btn-default navbar-btn pull-right">logOut</button>
+       <button  ng-click= "test()" type="button" class="btn btn-default navbar-btn pull-right">test</button>
+    </ul>
+  </div>  
+</div>    
 
-  <div ng-view></div>
+  <div ui-view>
+   
+  </div>
 
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
   <script src="app.js"></script>
-  <script src="home/home.js"></script>
+  <script src="signIn/signIn.js"></script>
   <script src="main/main.js"></script>
   <script src="addArticle/addArticle.js"></script>
+  <script src="regulament/regulament.js"></script>
+  <script src="home/home.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

@@ -1,649 +1,650 @@
 
 [
-    {
+    {  "id":1,
        "judet": "Bihor",
        "scoala": "COLEGIUL NATIONAL MIHAI EMINESCU"  
     },
      {
-        
+       "id":2,
        "judet": "Bihor",
        "scoala": "COLEGIUL TEHNIC VADU CRISULUI"  
     },
 
      { 
-        
+        "id":3,
        "judet": "Bihor",
        "scoala": "COLEGIUL NATIONAL EMANUIL GOJDU"  
     },
 
      {
-        
+        "id":4,
        "judet": "Bihor",
        "scoala": "COLEGIUL TEHNIC ALEXANDRU ROMAN"  
     },
      { 
-        
+        "id":5,
        "judet": "Bihor",
        "scoala": "LICEUL DE ARTE"  
     },
      { 
-       
+       "id":6,
        "judet": "Bihor",
        "scoala": "COLEGIUL TEHNIC MIHAI VITEAZUL"  
     },
      {
-           
+        "id":7,   
        "judet": "Bihor",
        "scoala": "Colegiul Economic Partenie Cosma"  
     },
     {
-       
+       "id":8,
        "judet": "Bihor",
        "scoala": "LICEUL TEORETIC ONISIFOR GHIBU"  
     },
     {
-       
+       "id":9,
        "judet": "Bihor",
        "scoala": "LICEUL VOCATIONAL PEDEAGOGIC BOLCAS"  
     },
     {
-      
+      "id":10,
        "judet": "Bihor",
        "scoala": "LICEUL TEORETIC LUCIAN BLAGA"  
     },
      {
-      
+        "id":11,
        "judet": "Bihor",
        "scoala": "COLEGIUL NATIONAL SAMUIL VULCAN"  
     },
 
      {
-       
+        "id":12,
        "judet": "Bistrita-Nasaud",
        "scoala": "Colegiul National Liviu Rebreanu"  
     },
      {
-       
+       "id":13,
        "judet": "Bistrita-Nasaud",
        "scoala": "Colegiul National Andrei Muresanu"  
     },
      {
-       
+       "id":14,
        "judet": "Bistrita-Nasaud",
        "scoala": "Colegiul National Petru Rares"  
     },
      {
-       
+       "id":15,
        "judet": "Bistrita-Nasaud",
        "scoala": "Colegiul Tehnic Infoel"  
     },
      {
-      
+      "id":16,
        "judet": "Cluj",
        "scoala": "Liceul Teoretic \"Nicolae Balcescu\" Cluj-Napoca"  
     },
      { 
-       
+       "id":17,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC GHEORGHE SINCAI"  
     },
      {
-        
+        "id":18,
        "judet": "Cluj",
        "scoala": "Liceul Teoretic \"Avram Iancu\" Cluj-Napoca" 
     },
      {
-        
+        "id":19,
        "judet": "Cluj",
        "scoala": "Liceul Teoretic \"Pavel Dan\" Campia Turzii" 
     },
      {
-       
+       "id":20,
        "judet": "Cluj",
        "scoala": "COLEGIUL TEHNIC VICTOR UNUGUREANU"  
     },
      {
-       
+       "id":21,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC LUCIAN BLAGA"  
     },
      {
-       
+       "id":22,
        "judet": "Cluj",
        "scoala": "Colegiul Tehnic Turda"  
     },
      {
-       
+       "id":23,
        "judet": "Cluj",
        "scoala": "SEMINARUL TEOLOGIC ORTODOX"  
     },
      {
-        
+        "id":24,
        "judet": "Cluj",
        "scoala": "LICEUL TEHNOLOGIC VLADEASA"  
     },
      {
-       
+       "id":25,
        "judet": "Cluj",
        "scoala": "COLEGIUL NATIONAL ANDREI MURESANU"  
     },
      {
-       
+       "id":26,
        "judet": "Cluj",
        "scoala": "COLEGIUL NATIONAL MIHAI VITEAZUL"  
     },
      {
-       
+       "id":27,
        "judet": "Cluj",
        "scoala": "COLEGIUL TEHNIC EDMOND NICOLAU"  
     },
      {
-      
+       "id":28,
        "judet": "Cluj",
        "scoala": "COLEGIUL TEHNIC DE CONSTRUCTII ANGHEL SALIGNY"  
     },
      {
-       
+       "id":29,
        "judet": "Cluj",
        "scoala": "COLEGIUL TEHNIC DR. IOAN RATIU"  
     },
      {
-       
+       "id":30,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC EUGEN PORA"  
     },
      {
-       
+       "id":31,
        "judet": "Cluj",
        "scoala": "COLEGIUL ECONOMIC IULIAN POP"  
     },
      {
-       
+       "id":32,
        "judet": "Cluj",
        "scoala": "COLEGIUL NATIONAL EMIL RACOVITA"  
     },
      {
-       
+       "id":33,
        "judet": "Cluj",
        "scoala": "LICEUL DE MUZICA SIGISMUND TODUTA"  
     },
      { 
-      
+      "id":34,
        "judet": "Cluj",
        "scoala": "COLEGIUL TEHNIC DE COMUNICATII AUGUSTIN MAIOR"  
     },
      { 
-       
+       "id":35,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC OCTAVIAN GOGA"  
     },
      { 
-      
+      "id":36,
        "judet": "Cluj",
        "scoala": "Colegiul Tehnic \"Ana Aslan\" Cluj-Napoca"  
     },
      { 
-        
+        "id":37,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC BRASSAI SAMUEL"  
     },
      {
-       
+       "id":38,
        "judet": "Cluj",
        "scoala": "Liceul Teoretic \"Ana Ipatescu\" Gherla"  
     },
      {
-          
+       "id":39,   
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC LIVIU REBREANU"  
     },
      {
-       
+       "id":40,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC PETRU MAIOR"  
     },
      {
-      
+       "id":41,
        "judet": "Cluj",
        "scoala": "COLEGIUL TEHNIC DE TRANSPORTURI TRANSILVANIA"  
     },
      {
-       
+       "id":42,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC JOSIKA MIKLOS"  
     },
      {
-       
+       "id":43,
        "judet": "Cluj",
        "scoala": "Colegiul Tehnic \"Napoca\" Cluj-Napoca"  
     },
      {
-       
+       "id":44,
        "judet": "Cluj",
        "scoala": "Liceul Tehnologic \"Stefan Pascu\" Apahida"  
     },
      {
-       
+       "id":45,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC GELU VOIEVOD"  
     },
      {
-       
+       "id":46,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC ONISIFOR GHIBU"  
     },
      {
-       
+       "id":47,
        "judet": "Cluj",
        "scoala": "COLEGIUL NATIONAL PEDAGOGIC GHEORGHE LAZAR"  
     },
      {
-       
+       "id":48,
        "judet": "Cluj",
        "scoala": "LICEUL DE INFORMATICA TIBERIU POPOVICIU"
     },
      {
-       
+       "id":49,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC MIHAI EMINESCU"  
     },
      {
-       
+       "id":50,
        "judet": "Cluj",
        "scoala": "LICEUL TEOLOGIC REFORMAT"  
     },
      {
-       
+       "id":51,
        "judet": "Cluj",
        "scoala": "LICEUL CU PROGRAM SPORTIV"  
     },
      {
-      
+      "id":52,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC APACZAI CSERE JANOS"  
     },
      {
-      
+       "id":53,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC VICTOR BABES"  
     },
      {
-       
+       "id":54,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC ALEXANDRU PAPIU ILARIAN"  
     },
      {
-       
+       "id":55,
        "judet": "Cluj",
        "scoala": "LICEUL TEOLOGIC BAPTIST EMANUEL"  
     },
      {
-      
+      "id":56,
        "judet": "Cluj",
        "scoala": "Liceul Tehnologic Constantin Brancusi"  
     },
      {
-       
+       "id":57,
        "judet": "Cluj",
        "scoala": "LICEUL TEHNOLOGIC SOMES DEJ"  
     },
      {
-       
+       "id":58,
        "judet": "Cluj",
        "scoala": "LICEUL TEHNOLOGIC ALEXANDRU BORZA"  
     },
      {
-       
+       "id":59,
        "judet": "Cluj",
        "scoala": "LICEUL TEOLOGIC ADVENTIST MARANATHA "  
     },
      {
-       
+       "id":60,
        "judet": "Cluj",
        "scoala": "LICEUL DE ARTE PLASTICE ROMULUS LADEA"  
     },
      {
-       
+       "id":61,
        "judet": "Cluj",
        "scoala": "COLEGIUL TEHNIC ENERGETIC"  
     },
      {
-       
+       "id":62,
        "judet": "Cluj",
        "scoala": "LICEUL TEHNOLOGIC GHERLA "  
     },
      { 
+      "id":63,
        "judet": "Cluj",
        "scoala": "COLEGIUL NATIONAL GEORGE BARITIU"  
     },
      { 
-      
+       "id":64,
        "judet": "Cluj",
        "scoala": "LICEUL  TEOLOGIC UNITARIAN JANOS ZSIGMOND"  
     },
      {
-      
+       "id":65,
        "judet": "Cluj",
        "scoala": "LICEUL DE COREGRAFIE SI ARTA DRAMATICA OCTAVIAN STROIA"  
     },
      {
-      
+       "id":66,
        "judet": "Cluj",
        "scoala": "COLEGIUL TEHNIC DE INDUSTRIE ALIMENTARA RALUCA RIPAN"  
     },
      {
-       
+       "id":67,
        "judet": "Cluj",
        "scoala": "LICEUL GRECO-CATOLIC INOCHENTIE MICU"  
     },
      {
-       
+        "id":68,
        "judet": "Cluj",
        "scoala": "LICEUL TEHNOLOGIC NR.1 TEHNOFRIG"  
     },
      {
-       
+       "id":69,
        "judet": "Cluj",
        "scoala": "COLEGIUL NATIONAL GEORGE COSBUC"  
     },
      {
-       
+       "id":70,
        "judet": "Cluj",
        "scoala": "LICEUL TEORETIC BATHORY ISTVAN"  
     },
      {
-       
+       "id":71,
        "judet": "Cluj",
        "scoala": "LICEUL TEHNOLOGIC AUREL VLAICU"  
     },
     {
-       
+       "id":72,
        "judet": "Hunedoara",
        "scoala": "COLEGIUL NATIONAL DECEBAL"  
     },
     {
-       
+       "id":73,
        "judet": "Hunedoara",
        "scoala": "Colegiul National de Informatica Carmen Sylva"  
     },
     {
-       
+       "id":74,
        "judet": "Hunedoara",
        "scoala": "COLEGIUL NATIONAL SABIN DRAGOI"  
     },
     {
-       
+       "id":75,
        "judet": "Hunedoara",
        "scoala": "LICEUL TEORETIC MIRCEA ELIADE"  
     },
     {
-       
+       "id":76,
        "judet": "Hunedoara",
        "scoala": "COLEGIUL NATIONAL I. C. BRATIANU"  
     },
     {
-       
+       "id":77,
        "judet": "Hunedoara",
        "scoala": "COLEGIUL NATIONAL MIHAI EMINESCU"  
     },
     {
-       
+       "id":78,
        "judet": "Hunedoara",
        "scoala": "Colegiul National Aurel Vlaicu "  
     },
     {
-       
+       "id":79,
        "judet": "Hunedoara",
        "scoala": "COLEGIUL NATIONAL DE INFORMATICA TRAIAN LALESCU"  
     },
     {
-       
+       "id":80,
        "judet": "Hunedoara",
        "scoala": "COLEGIUL NATIONAL AVRAM IANCU"  
     },
     {
-       
+       "id":81,
        "judet": "Hunedoara",
        "scoala": "COLEGIUL TEHNIC CONSTANTIN BRANCUSI"  
     },
     {
-       
+       "id":82,
        "judet": "Hunedoara",
        "scoala": "COLEGIUL TEHNIC MIHAI VITEAZU"  
     },
     {
-       
+       "id":83,
        "judet": "Hunedoara",
        "scoala": "COLEGIUL NATIONAL IANCU DE HUNEDOARA"  
     },
     {
-       
+       "id":84,
        "judet": "Hunedoara",
        "scoala": "LICEUL TEORETIC SILVIU DRAGOMIR"  
     },
 
     {
-       
+       "id":85,
        "judet": "Maramures",
        "scoala": "Colegiul National Gheorghe Sincai"  
     },
     {
-       
+       "id":86,
        "judet": "Maramures",
        "scoala": "LICEUL TEORETIC EMIL RACOVITA"  
     },
     {
-       
+       "id":87,
        "judet": "Maramures",
        "scoala": "Colegiul National Mihai Eminescu"  
     },
     {
-       
+       "id":88,
        "judet": "Maramures",
        "scoala": "LICEUL TEORETIC IOAN BUTEANU"  
     },
     {
-       
+       "id":89,
        "judet": "Maramures",
        "scoala": "COLEGIUL ECONOMIC NICOLAE TITULESCU"  
     },
     {
-       
+       "id":90,
        "judet": "Maramures",
        "scoala": "LICEUL TEHNOLOGIC FORESTIER"  
     },
     {
-       
+       "id":91,
        "judet": "Maramures",
        "scoala": "LICEUL DE ARTA"  
     },
     {
-       
+       "id":92,
        "judet": "Maramures",
        "scoala": "COLEGIUL TEHNIC C. D. NENITESCU"  
     },
     {
-       
+       "id":93,
        "judet": "Maramures",
        "scoala": "COLEGIUL TEHNIC DE TRANSPORTURI AUTO"  
     },
     {
-       
+       "id":94,
        "judet": "Maramures",
        "scoala": "LICEULTEHNOLOGIC AGRICOL ALEXIU BERINDE"  
     },
     {
-       
+       "id":95,
        "judet": "Maramures",
        "scoala": "COLEGIUL TEHNIC ANGHEL SALIGNY"  
     },
     {
-       
+       "id":96,
        "judet": "Maramures",
        "scoala": "LICEUL TEOLOLOGIC PENTICOSTAL "  
     },
     {
-       
+       "id":97,
        "judet": "Maramures",
        "scoala": "LICEUL TEHNOLOGIC MARMATIA"  
     },
     {
-       
+       "id":98,
        "judet": "Maramures",
        "scoala": "Colegiul Tehnic George Baritiu"  
     },
     {
-       
+       "id":99,
        "judet": "Maramures",
        "scoala": "COLEGIUL TEHNIC AUREL VLAICU"  
     },
     {
-       
+       "id":100,
        "judet": "Maramures",
        "scoala": "COLEGIUL NATIONAL GHEORGHE SINCAI"  
     },
     {
-       
+       "id":101,
        "judet": "Maramures",
        "scoala": "LICEUL TEHNOLOGIC TRAIAN VUIA"  
     },
     {
-       
+       "id":102,
        "judet": "Maramures",
        "scoala": "LICEUL TEORETIC NEMETH LASZLO"  
     },
     {
-       
+       "id":103,
        "judet": "Maramures",
        "scoala": "LICEUL TEORETIC LEOWEY KLARA"  
     },
     {
-       
+       "id":104,
        "judet": "Maramures",
        "scoala": "COLEGIUL NATIONAL VASILE LUCACIU"  
     },
     {
-       
+       "id":105,
        "judet": "Salaj",
        "scoala": "Colegiul National Silvania"  
     },
     {
-       
+       "id":106,
        "judet": "Salaj",
        "scoala": "COLEGIUL TEHNIC ALESANDRU PAPIU ILARIAN"  
     },
     {
-       
+       "id":107,
        "judet": "Salaj",
        "scoala": "Colegiul National Simion Barnutiu"  
     },
     {
-       
+       "id":108,
        "judet": "Salaj",
        "scoala": "COLEGIUL TEHNIC ALEXANDRU ROMAN"  
     },
     {
-       
+       "id":109,
        "judet": "Timis",
        "scoala": "COLEGIUL NATIONAL BANATEAN"  
     },
     {
-       
+       "id":110,
        "judet": "Timis",
        "scoala": "liceul  teoretic gataia"  
     },
     {
-       
+       "id":111,
        "judet": "Timis",
        "scoala": "Colegiul Tehnic Henri Coanda"  
     },
     {
-       
+       "id":112,
        "judet": "Timis",
        "scoala": "LICEUL TEORETIC IOAN JEBELEAN"  
     },
     {
-       
+       "id":113,
        "judet": "Timis",
        "scoala": "Liceul Tehnologic Transporturi Auto"  
     },
     {
-       
+       "id":114,
        "judet": "Timis",
        "scoala": "LICEUL TEHNOLOGIC CRISTOFOR NAKO"  
     },
     {
-       
+       "id":115,
        "judet": "Timis",
        "scoala": "LICEUL TEOLOGIC BAPTIST"  
     },
     {
-       
+       "id":116,
        "judet": "Timis",
        "scoala": "COLEGIUL ECONOMIC FRANCESCO SEVERIO NITTI"  
     },
     {
-       
+       "id":117,
        "judet": "Timis",
        "scoala": "LICEUL TEORETIC GRIGORE MOISIL"  
     },
     {
-       
+       "id":118,
        "judet": "Timis",
        "scoala": "COLEGIUL NATIONAL CONSTANTIN DIACONOVICI LOGA"  
     },
     {
-       
+       "id":119,
        "judet": "Timis",
        "scoala": "LICEUL TEHNOLOGIC ROMULUS PARASCHIVOIU"  
     },
     {
-       
+       "id":120,
        "judet": "Timis",
        "scoala": "COLEGIUL TEHNIC ION I. C. BRATIANU"  
     },
     {
-       
+       "id":121,
        "judet": "Timis",
        "scoala": "Liceul  Sfantul Nicolae Deta"  
     },
     {
-       
+       "id":122,
        "judet": "Timis",
        "scoala": "COLEGIUL NATIONAL IULIA HASDEU"  
     },
     {
-       
+       "id":123,
        "judet": "Timis",
        "scoala": "LICEUL TEORETIC JEAN LOUIS CALDERON"  
     },
     {
-       
+       "id":124,
        "judet": "Timis",
        "scoala": "LICEUL TEHNOLOGIC DE INDUSTRIE ALIMENTARA"  
     },
     {
-       
+       "id":125,
        "judet": "Timis",
        "scoala": "LICEUL PEDAGOGIC CARMEN SYLVA"  
     },
     {
-       
+       "id":126,
        "judet": "Timis",
        "scoala": "Colegiul Tehnic  Azur"  
     },
     {
-       
+       "id":127,
        "judet": "Timis",
        "scoala": "Colegiul Tehnic Dimitrie Leonida"  
     },
     {
-       
+       "id":128,
        "judet": "Timis",
        "scoala": "COLEGIUL NATIONAL CORIOLAN BREDICEANU"  
     },
     {
-       
+       "id":129,
        "judet": "Timis",
        "scoala": "COLEGIUL TEHNIC ION MINCU"  
     }

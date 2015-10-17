@@ -1,12 +1,20 @@
 'use strict';
  
-var app = angular.module('myApp.addArticle', ['ngRoute',"firebase"])
+var app = angular.module('myApp.addArticle', ['ui.router',"firebase"])
  
-.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/addArticle', {
-        templateUrl: 'addArticle/addArticle.html',
-        controller: 'AddArticleCtrl'
-    });
+.config(['$stateProvider', function($stateProvider) {
+
+   $stateProvider
+    .state('addArticle', {
+      url: "/editare",
+      templateUrl: "addArticle/addArticle.html",
+      controller: "AddArticleCtrl",
+      data: {
+	      authorization: true,
+	      redirectTo: 'login'
+      }
+    })
+    
 }])
  
 app.controller('AddArticleCtrl',function($scope,$firebaseArray) {

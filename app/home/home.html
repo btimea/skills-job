@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
  
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,30 +8,64 @@
     <title>AngularJS & Firebase Web App</title>
  
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
- 
-    <link href="justified-nav.css" rel="stylesheet">
+    
  
 </head>
  
-<body ng-controller="HomeCtrl">
-    
-    <div class="container">
-        <div class="jumbotron" style="padding-bottom:0px;">
-            <h2>AngularJS & Firebase App!</h2>
-        </div>
-        <form class="form-signin" role="form">
-            <input ng-model="user.email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">
-            <input ng-model="user.password" type="password" class="form-control" placeholder="Password" required="">
-            <label class="checkbox">
-                <a href="#"> Sign Up</>
-        </label>
-        <button type="button" ng-click="SignIn($event)" class="btn btn-lg btn-primary btn-block">SignIn</button>
-      </form>
+<body>
  
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+               <!--  <a class="blog-nav-item active" href="#/main">Home</a> -->
+               <!--  <a class="blog-nav-item " href="#/addArticle">Editare baza de date</a>
+  -->
+            </nav>
+        </div>
     </div>
-
+   
+    <div class="container m-b-xl" >
+        <p class="lead p-b-sm border-b-sm">Vizualizare Lista</p>
+        <div class="row">
+            <div class="form-group col-lg-6 col-md-12">
+                <label for="sel1">Selecteaza judet:</label>
+                <select class="form-control" id="sel1" ng-model="search.judet"  ng-options="item for item in judete">
+                    <option value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div class="form-group  col-lg-6 col-md-12">
+                <label for="sel1">Select scoala:</label>
+                <select class="form-control" id="sel1" ng-model="search.scoala" ng-options="scoala for scoala in scoli" >
+                    <option value="{{scoala}}">{{scoala}}</option>     
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">   
+                <button type="button" class="btn btn-primary" ng-csv="castigatori" csv-header="getHeaderCastigatori()" filename="test.csv">Export total</button>
+                 <button type="button" class="btn btn-primary" ng-csv="listAllWinners" csv-header="getHeaderCastigatori()" filename="test.csv">Export </button>
+                <button type="button" class="btn btn-primary" ng-click="ShowAllWinners()">Vizualizeaza</button>
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="list-group m-t-md" id="filterJResults"  ng-repeat="item in listAllWinners">
+                    <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">{{item.nume}}</h4>
+                        <p>{{item.scoala}} </p>
+                        <p>{{item.judet}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>    
+ 
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"></p>
+        </div>
+    </footer>
+ 
 </body>
-
+ 
 </html>
-
