@@ -53,3 +53,21 @@
 .border-b-sm {
   border-bottom: 1px solid #eee;
 }
+
+.storm-icons {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-block: 0px;
+}
+
+.test {
+ background-color: #eee;
+}
+.testdoi {
+  background-image: url('assets/img/random.gif');
+}
+

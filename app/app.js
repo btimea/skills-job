@@ -2,16 +2,23 @@
  
 angular.module('myApp', [
     'ui.router',
+    'angular-growl',
+    'ngAnimate',
     'myApp.login',
     'myApp.main',
     'myApp.addArticle',
     'myApp.home',
     'myApp.regulament'
 ]).
-config(['$urlRouterProvider', function($urlRouterProvider) {
+config(['$urlRouterProvider','growlProvider', function($urlRouterProvider,growlProvider) {
     // Set defualt view of our app to home
    $urlRouterProvider.otherwise("/home");
+   growlProvider.globalTimeToLive(3000);
+
 }]);
+
+
+
 
 // angular.module('myApp').run(function($rootScope, $state, Authorization) {
  

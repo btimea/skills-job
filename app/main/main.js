@@ -1,6 +1,6 @@
 'use strict';
  
-var app = angular.module('myApp.main', ['ui.router',"firebase",'ngSanitize', 'ngCsv','ngResource'])
+var app = angular.module('myApp.main', ['ui.router',"firebase",'ngSanitize', 'ngCsv','ngResource','angular-growl','ngAnimate'])
 
  
 .config(['$stateProvider', function($stateProvider) {
@@ -19,7 +19,7 @@ var app = angular.module('myApp.main', ['ui.router',"firebase",'ngSanitize', 'ng
 }])
  
  
-app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http', function($scope,$firebaseObject,$firebaseArray,$http) {
+app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http','growl', function($scope,$firebaseObject,$firebaseArray,$http,growl) {
   
   var ref = new Firebase("https://skillsjobs.firebaseio.com/Articles");
   $scope.data = $firebaseObject(ref);
@@ -53,19 +53,21 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
   }
    
   $scope.getHeader = function () {
-    return ["CNP","Clasa", "Data", "Email", "Grup", "Id", "Judet", "Mediu","Nume","Scoala","Sex","Varsta"]
+    return ["CNP","Clasa", "Data", "Email", "Grup", "Id", "Judet", "Mediu","Nume","Scoala","Sex","Varsta","Ord"]
   };
 
 
-   $scope.getHeaderCastigatori = function () {
+   $scope.getHeaderCastigatoriTotal = function () {
     return ["Nume","Scoala","Judet"]
   };
 
-
-  
-
+    $scope.getHeaderCastigatori = function () {
+    return ["Nume","Scoala","Judet","Ord"]
+  };
 
   $scope.filterIt = function (i){
+     $scope.winnersData = [];
+
     if ($scope.scoliAlese.indexOf(i) <=-1){
       $scope.scoliAlese.push(i);
 
@@ -76,7 +78,7 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
             $scope.elevi = $scope.data;
             $scope.filtered = [];
             $scope.idList = [];
-            $scope.winnersData =[];
+           
           
 
             $scope.elevi.forEach(function(item){
@@ -96,6 +98,11 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
               })
             })
 
+
+            for(var i=0;i < $scope.winnersData.length;i++){
+              $scope.winnersData[i].idC = i+1;
+            }
+            debugger;
             return $scope.winnersData;
 
         })
@@ -111,7 +118,8 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
                 })
 
               $scope.loading = false;
-
+              growl.addSuccessMessage("Extragerea a fost efectuata cu succes");
+             
             });
         
       }, 3000) 
@@ -120,19 +128,28 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
     }
 
     else {
-      alert("Extragerea a fost deja efectuata")
+      growl.addErrorMessage("Extragerea aferente acestei scoli a fost deja efectuata \n Va rugam selectati alta scoala");
     }
 
   }
+ 
+
 
 
   $scope.ShowAllWinners = function(){
     $scope.listAllWinners=[];
-     $scope.castigatori.forEach(function(item){
+      $scope.castigatori.forEach(function(item,index){
           if (item.judet === $scope.search.judet && item.scoala === $scope.search.scoala) {
+            //item.idC = index;
             $scope.listAllWinners.push(item);
+           
           }
-        });
+      });
+
+      for(var i=0;i < $scope.listAllWinners.length;i++){
+        $scope.listAllWinners[i].idC = i+1;
+      }
+       return $scope.listAllWinners;
   }  
 
  
