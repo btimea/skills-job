@@ -13,7 +13,7 @@ var app = angular.module('myApp.login', ['ui.router','firebase'])
     })
     
 }])
- 
+
  
 // Home controller
 app.controller('LoginCtrl', ['$scope','$location','$firebaseAuth',function($scope,$location,$firebaseAuth, $state,Authorization
@@ -30,16 +30,23 @@ app.controller('LoginCtrl', ['$scope','$location','$firebaseAuth',function($scop
     loginObj.$authWithPassword({
             email: username,
             password: password
-        })
-        .then(function(user) {
-           $location.path('/main');
-            console.log('Authentication successful');
-            Authorization.go('main');
-            
-        }, function(error) {
-            //Failure callback
-            console.log('Authentication failure');
-        });       
+    })
+    .then(function(user) {
+       $location.path('/main');
+        console.log('Authentication successful');
+       
+        
+    }, function(error) {
+        //Failure callback
+        console.log('Authentication failure');
+    });
+    // .finally(function(){
+    //   Authorization.go('main'); 
+    //   debugger;
+
+    // });
+
+               
 	}
 
  
