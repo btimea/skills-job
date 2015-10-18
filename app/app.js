@@ -42,9 +42,6 @@ config(['$urlRouterProvider','growlProvider', function($urlRouterProvider,growlP
 //     $state.go('home');
 //   };
 
-//    $rootScope.onLogin = function() {
-//         Authorization.go('private');
-//       };
 
 // })
 

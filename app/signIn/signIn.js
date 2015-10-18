@@ -34,14 +34,12 @@ app.controller('LoginCtrl', ['$scope','$location','$firebaseAuth',function($scop
         .then(function(user) {
            $location.path('/main');
             console.log('Authentication successful');
-            // Authorization.go('main');
+            Authorization.go('main');
             
         }, function(error) {
             //Failure callback
             console.log('Authentication failure');
-        });
-
-       
+        });       
 	}
 
  
