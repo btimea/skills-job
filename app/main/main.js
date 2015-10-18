@@ -100,9 +100,9 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
 
 
             for(var i=0;i < $scope.winnersData.length;i++){
-              $scope.winnersData[i].idC = i+1;
+              $scope.winnersData[i].idOrd = i+1;
             }
-            debugger;
+
             return $scope.winnersData;
 
         })
@@ -111,6 +111,7 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
               // Hide loading spinner whether our call succeeded or failed.
               $scope.winnersData.forEach(function(item){
                   $scope.castigatori.$add({
+                    ord:item.idOrd,
                     nume: item.nume,
                     scoala: item.scoala,
                     judet: item.judet
@@ -140,14 +141,13 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
     $scope.listAllWinners=[];
       $scope.castigatori.forEach(function(item,index){
           if (item.judet === $scope.search.judet && item.scoala === $scope.search.scoala) {
-            //item.idC = index;
             $scope.listAllWinners.push(item);
            
           }
       });
 
       for(var i=0;i < $scope.listAllWinners.length;i++){
-        $scope.listAllWinners[i].idC = i+1;
+        $scope.listAllWinners[i].idOrd = i+1;
       }
        return $scope.listAllWinners;
   }  
