@@ -10,10 +10,13 @@ var app = angular.module('myApp.main', ['ui.router',"firebase",'ngSanitize', 'ng
       url: "/main",
       templateUrl: "main/main.html",
       controller: "MainCtrl",
-      data: {
-        authorization: true,
-        redirectTo: 'login'
+      resolve: {
+        "currentAuth": ["Auth", function(Auth) {
+          return Auth.$requireAuth();
+
+        }]
       }
+      
     })
     
 }])
@@ -26,7 +29,7 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
   var ref2 = new Firebase("https://skillsjobs.firebaseio.com/Castigatori");
   $scope.castigatori = $firebaseArray(ref2);
 
-  $scope.judete = ["Bihor","Bistrita-Nasaud","Cluj","Hundedoara","Maramures","Salaj","Timis"];
+  $scope.judete = ["Bihor","Bistrita-Nasaud","Cluj","Hunedoara","Maramures","Salaj","Timis"];
   $scope.search = {}; 
   $scope.scoliAlese = [];
  
@@ -58,15 +61,15 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
 
 
    $scope.getHeaderCastigatoriTotal = function () {
-    return ["Nume","Scoala","Judet"]
+    return ["Judet","Nume","Ord","Scoala"]
   };
 
     $scope.getHeaderCastigatori = function () {
-    return ["Nume","Scoala","Judet","Ord"]
+    return ["Judet","Nume","Ord","Scoala"]
   };
 
   $scope.filterIt = function (i){
-     $scope.winnersData = [];
+    $scope.winnersData = [];
 
     if ($scope.scoliAlese.indexOf(i) <=-1){
       $scope.scoliAlese.push(i);
@@ -111,7 +114,7 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
               // Hide loading spinner whether our call succeeded or failed.
               $scope.winnersData.forEach(function(item){
                   $scope.castigatori.$add({
-                    ord:item.idOrd,
+                    idOrd:item.idOrd,
                     nume: item.nume,
                     scoala: item.scoala,
                     judet: item.judet
@@ -129,7 +132,7 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
     }
 
     else {
-      growl.addErrorMessage("Extragerea aferente acestei scoli a fost deja efectuata \n Va rugam selectati alta scoala");
+      growl.addErrorMessage("Extragerea aferente acestei scoli a fost deja efectuata" + '\n' + "Va rugam selectati alta scoala");
     }
 
   }
@@ -148,6 +151,7 @@ app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http',
 
       for(var i=0;i < $scope.listAllWinners.length;i++){
         $scope.listAllWinners[i].idOrd = i+1;
+        debugger
       }
        return $scope.listAllWinners;
   }  

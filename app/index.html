@@ -17,30 +17,52 @@
   <link rel="stylesheet" href="styles/animate.css">
 
 </head>
-<body>
-<div class="row">
-  <div class="col-lg-12">
-    <ul class="nav nav-pills">
-      <li role="presentation" class="active"><a ui-sref="home">Home</a></li>
-      <li role="presentation"><a ui-sref="regulament">Regulament</a></li>
-       <li role="presentation"><a ui-sref="main">Main</a></li>
-     <!--  <li role="presentation" ng-if= "ui-sref== main" ><a ui-sref="addArticle">Editare</a></li> -->
-      <button type="button" class="btn btn-default navbar-btn pull-right"><a ui-sref="login">Sign In</a></button>
-      <button  ng-click= "onLogout()" type="button" class="btn btn-default navbar-btn pull-right">logOut</button>
-       <button  ng-click= "onLogin()" type="button" class="btn btn-default navbar-btn pull-right">test</button>
-    </ul>
-  </div>  
-</div>    
+<body  style="background-color:white">
+  <div class="row"  ng-controller="LoginCtrl">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="col-lg-12">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Skills Jobs</a>
+          </div>
 
-  <div ui-view>
-   
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a ui-sref="home">Home</a></li>
+              <li><a ui-sref="regulament">Regulament</a></li>
+              <li><a ui-sref="main">Extragere</a></li>
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+              <li><a ui-sref="login">Admin</a></li>
+               <li ng-click="logout()"><a ui-sref="home">Sign Out</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
   </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <i class="imagine antet"></i>
+    </div>
+  </div>  
+
+  <div ui-view >
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <i class="imagine footer"></i>
+    </div>
+  </div> 
+    
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
   <script src="app.js"></script>
-  <script type="text/javascript" src="services/authorization.js"></script>
   <script src="signIn/signIn.js"></script>
   <script src="main/main.js"></script>
   <script src="addArticle/addArticle.js"></script>
@@ -63,9 +85,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.5/ng-csv.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-resource.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.min.js"></script>
-
-
-
 
 </body>
 </html>

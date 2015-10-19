@@ -3,22 +3,16 @@
  
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
- 
-    <title>AngularJS & Firebase Web App</title>
- 
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
- 
     <link href="justified-nav.css" rel="stylesheet">
- 
+
 </head>
  
-<body ng-controller="HomeCtrl">
+<body ng-controller="LoginCtrl">
     
     <div class="container">
         <div class="jumbotron" style="padding-bottom:0px;">
-            <h2>Skills Jobs</h2>
+            <h2 class="text-center">Skills Jobs</h2>
         </div>
         <form class="form-signin" role="form">
             <input ng-model="user.email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">
@@ -26,7 +20,8 @@
             <label class="checkbox">
                 
         </label>
-        <button type="button" ng-click="SignIn($event);" class="btn btn-lg btn-primary btn-block">SignIn</button>
+        <button type="button" ng-click="SignIn($event)" class="btn btn-lg btn-primary btn-block">SignIn</button>
+
       </form>
  
     </div>

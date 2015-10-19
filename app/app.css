@@ -71,3 +71,20 @@
   background-image: url('assets/img/random.gif');
 }
 
+.imagine {
+  height: 100px;
+  width: 100%;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-block: 0px;
+}
+.antet {
+   background-image:url('assets/img/antet.jpg');
+}
+.footer {
+  height: 180px;
+  background-image:url('assets/img/footer.jpg');
+}
+}

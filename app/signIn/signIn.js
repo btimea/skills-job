@@ -14,13 +14,19 @@ var app = angular.module('myApp.login', ['ui.router','firebase'])
     
 }])
 
+app.factory("Auth", ["$firebaseAuth",
+  function($firebaseAuth) {
+    var ref = new Firebase("https://skillsjobs.firebaseio.com");
+    return $firebaseAuth(ref);
+  }
+]);
+
  
 // Home controller
-app.controller('LoginCtrl', ['$scope','$location','$firebaseAuth',function($scope,$location,$firebaseAuth, $state,Authorization
+app.controller('LoginCtrl', ['$scope','$rootScope','$location','$firebaseAuth','Auth',function($scope,$rootScope,$location,$firebaseAuth,Auth,$state
   ){
 
-
-	var firebaseObj = new Firebase("https://skillsjobs.firebaseio.com/");
+	var firebaseObj = new Firebase("https://skillsjobs.firebaseio.com");
 	var loginObj = $firebaseAuth(firebaseObj); 
 
 	$scope.SignIn = function(e) {
@@ -34,23 +40,27 @@ app.controller('LoginCtrl', ['$scope','$location','$firebaseAuth',function($scop
     .then(function(user) {
        $location.path('/main');
         console.log('Authentication successful');
-       
         
+        $scope.auth = Auth;
+
+        // any time auth status updates, add the user data to scope
+        $scope.auth.$onAuth(function(authData) {
+        $scope.authData = authData;
+        });
+             
     }, function(error) {
         //Failure callback
         console.log('Authentication failure');
     });
-    // .finally(function(){
-    //   Authorization.go('main'); 
-    //   debugger;
-
-    // });
-
-               
+   
+             
 	}
 
- 
-   
-    
+  $scope.logout = function() {
+    $scope.auth = Auth;
+    $scope.auth.$unauth(); 
+  }
 
 }]);
+    
+

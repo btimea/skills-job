@@ -13,36 +13,18 @@ angular.module('myApp', [
 config(['$urlRouterProvider','growlProvider', function($urlRouterProvider,growlProvider) {
     // Set defualt view of our app to home
    $urlRouterProvider.otherwise("/home");
-   growlProvider.globalTimeToLive(3000);
+   growlProvider.globalTimeToLive(5000);
 
 }]);
 
 
-
-
-angular.module('myApp').run(function($rootScope, $state, Authorization) {
- 
-  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-    if (!Authorization.authorized) {
-      if (Authorization.memorizedState && (!_.has(fromState, 'data.redirectTo') || toState.name !== fromState.data.redirectTo)) {
-        Authorization.clear();
-      }
-      if (_.has(toState, 'data.authorization') && _.has(toState, 'data.redirectTo')) {
-        if (_.has(toState, 'data.memory')) {
-          Authorization.memorizedState = toState.name;
-        }
-        $state.go(toState.data.redirectTo);
-      }
-    }
-    debugger
-
-  });
-
-  $rootScope.onLogout = function() {
-    Authorization.clear();
-    $state.go('home');
-  };
-
-
-})
-
+// for ui-router
+angular.module('myApp').run(["$rootScope", "$state", function($rootScope, $state) {
+$rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
+  // We can catch the error thrown when the $requireAuth promise is rejected
+  // and redirect the user back to the home page
+  if (error === "AUTH_REQUIRED") {
+    $state.go("home");
+  }
+});
+}]);

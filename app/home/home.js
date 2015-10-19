@@ -8,6 +8,7 @@ var app = angular.module('myApp.home', ['ui.router','firebase'])
    $stateProvider
     .state('home', {
       url: "/home",
+      controller:'MainCtrl',
       templateUrl: "home/home.html"
     })
     
