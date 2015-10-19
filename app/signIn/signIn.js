@@ -29,7 +29,7 @@ app.controller('LoginCtrl', ['$scope','$rootScope','$location','$firebaseAuth','
 	var firebaseObj = new Firebase("https://skillsjobs.firebaseio.com");
 	var loginObj = $firebaseAuth(firebaseObj); 
   $scope.authenticationData = firebaseObj.getAuth();
-  
+
 	$scope.SignIn = function(e) {
     e.preventDefault();
     var username = $scope.user.email;

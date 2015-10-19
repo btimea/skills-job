@@ -12,12 +12,12 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-  <link href="bower_components/angular-growl/build/angular-growl.min.css" rel="stylesheet">
+  <link href="bower_components/angular-growl-v2/build/angular-growl.min.css" rel="stylesheet">
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="styles/animate.css">
 
 </head>
-<body  style="background-color:white">
+<body>
   <div class="row"  data-ng-controller="LoginCtrl">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -37,8 +37,8 @@
             </ul>
             
             <ul class="nav navbar-nav navbar-right">
-              <li><a ui-sref="login">Admin</a></li>
-               <li ng-click="logout()"><a ui-sref="home">Sign Out</a></li>
+              <li><a  ng-if="authenticationData == null" ui-sref="login">Admin</a></li>
+               <li ng-click="logout()"><a  ng-if="authenticationData" ui-sref="home">Sign Out</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div>
@@ -83,7 +83,7 @@
 <!-- AngularFire -->
 <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-sanitize.min.js"></script>
- <script src="bower_components/angular-growl/build/angular-growl.min.js"></script>
+ <script src="bower_components/angular-growl-v2/build/angular-growl.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.5/ng-csv.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-resource.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.min.js"></script>

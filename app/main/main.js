@@ -26,8 +26,12 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   
   var ref = new Firebase("https://skillsjobs.firebaseio.com/Articles");
   $scope.data = $firebaseObject(ref);
+
   var ref2 = new Firebase("https://skillsjobs.firebaseio.com/Castigatori");
   $scope.castigatori = $firebaseArray(ref2);
+
+  var ref3 = new Firebase("https://skillsjobs.firebaseio.com/Scoliextr");
+  $scope.scoliextr = $firebaseArray(ref3);
 
   $scope.judete = ["Bihor","Bistrita-Nasaud","Cluj","Hunedoara","Maramures","Salaj","Timis"];
   $scope.search = {}; 
@@ -61,11 +65,11 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
 
 
    $scope.getHeaderCastigatoriTotal = function () {
-    return ["Judet","Nume","Ord","Scoala"]
+    return ["Ord","Judet","Nume","Scoala"]
   };
 
     $scope.getHeaderCastigatori = function () {
-    return ["Judet","Nume","Ord","Scoala"]
+    return ["Ord","Judet","Nume","Scoala"]
   };
 
   $scope.filterIt = function (i){
@@ -107,7 +111,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
             for(var i=0;i < $scope.winnersData.length;i++){
               $scope.winnersData[i].idOrd = i+1;
             }
-
+              
             return $scope.winnersData;
 
         })
@@ -123,8 +127,19 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                   });    
                 })
 
-              $scope.loading = false;
-              growl.addSuccessMessage("Extragerea a fost efectuata cu succes");
+               $scope.loading = false;
+              // setTimeout(function(){
+              //   $scope.first = $scope.winnersData[0].nume;
+              //  }, 3000) 
+              // setTimeout(function(){
+              //   $scope.second = $scope.winnersData[1].nume;
+              //  }, 3000) 
+              //  setTimeout(function(){
+              //   $scope.third = $scope.winnersData[2].nume;
+              //  }, 3000) 
+
+
+              growl.success("Extragerea a fost efectuata cu succes");
              
             });
         
@@ -134,7 +149,8 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
     }
 
     else {
-      growl.addErrorMessage("Extragerea aferente acestei scoli a fost deja efectuata" + '\n' + "Va rugam selectati alta scoala");
+
+      growl.error("Extragerea aferente acestei scoli a fost deja efectuata. Va rugam selectati alta scoala");
     }
 
   }
@@ -142,20 +158,24 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
 
 
 
-  $scope.ShowAllWinners = function(){
+  $scope.ShowWinners = function(){
     $scope.listAllWinners=[];
-      $scope.castigatori.forEach(function(item,index){
+      $scope.castigatori.forEach(function(item){
           if (item.judet === $scope.search.judet && item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
             $scope.listAllWinners.push(item);
-           
           }
       });
 
       for(var i=0;i < $scope.listAllWinners.length;i++){
         $scope.listAllWinners[i].idOrd = i+1;
       }
+
        return $scope.listAllWinners;
-  }  
+  } 
+
+  $scope.ShowAllWinners = function(){
+    return $scope.castigatori
+  } 
 
  
   $scope.shuffle = function (array) {
