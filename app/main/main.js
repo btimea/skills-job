@@ -23,7 +23,7 @@ var app = angular.module('myApp.main', ['ui.router',"firebase",'ngSanitize', 'ng
  
  
 app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http','growl', function($scope,$firebaseObject,$firebaseArray,$http,growl) {
-  
+ 
   var ref = new Firebase("https://skillsjobs.firebaseio.com/Articles");
   $scope.data = $firebaseObject(ref);
   var ref2 = new Firebase("https://skillsjobs.firebaseio.com/Castigatori");
