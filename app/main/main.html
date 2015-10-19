@@ -21,7 +21,6 @@
         <div class="page-header">
             <h1>Skills For Jobs</h1>
         </div>
-         <p role="presentation" class="active"><a ui-sref="addArticle">Edit</a></p>
         <div class="row">
             <div class="form-group col-lg-6 col-md-12">
                 <label for="sel1">Selecteaza judet:</label>
@@ -55,7 +54,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="list-group m-t-md item" id="filterJResults"  ng-repeat="item in winnersData ">
                     <div class="list-group-item active">
-                        <h4 class="list-group-item-heading">{{item.idOrd}} . {{item.nume}}</h4> 
+                        <h4 class="list-group-item-heading">{{item.idOrd}} . {{item.nume}} {{item.scoala}}</h4> 
                     </div>
                 </div>
             </div>

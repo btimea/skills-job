@@ -22,11 +22,8 @@ var app = angular.module('myApp.main', ['ui.router',"firebase",'ngSanitize', 'ng
 }])
  
  
-app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http','growl','$state', function($scope,$firebaseObject,$firebaseArray,$http,growl,$state) {
-
-$scope.isState = function (state) {
-  var stateArray = $state.current.name.split(".");
-}
+app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseArray','$http','growl','$state', function($scope,$rootScope,$firebaseObject,$firebaseArray,$http,growl,$state) {
+  
   var ref = new Firebase("https://skillsjobs.firebaseio.com/Articles");
   $scope.data = $firebaseObject(ref);
   var ref2 = new Firebase("https://skillsjobs.firebaseio.com/Castigatori");
@@ -88,13 +85,15 @@ $scope.isState = function (state) {
           
 
             $scope.elevi.forEach(function(item){
-              if (item.judet === $scope.search.judet && item.scoala === $scope.search.scoala) {
+              $scope.test =item.scoala.toUpperCase();
+
+              if (item.judet === $scope.search.judet &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
                 $scope.filtered.push(item);
                 $scope.idList.push(item.id);
               }
             });
 
-            $scope.winnersId = $scope.shuffle($scope.idList).slice(4,7);
+            $scope.winnersId = $scope.shuffle($scope.idList).slice(0,3);
 
             $scope.filtered.forEach(function(item){
               $scope.winnersId.forEach(function(winId){
@@ -146,7 +145,7 @@ $scope.isState = function (state) {
   $scope.ShowAllWinners = function(){
     $scope.listAllWinners=[];
       $scope.castigatori.forEach(function(item,index){
-          if (item.judet === $scope.search.judet && item.scoala === $scope.search.scoala) {
+          if (item.judet === $scope.search.judet && item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
             $scope.listAllWinners.push(item);
            
           }
@@ -154,7 +153,6 @@ $scope.isState = function (state) {
 
       for(var i=0;i < $scope.listAllWinners.length;i++){
         $scope.listAllWinners[i].idOrd = i+1;
-        debugger
       }
        return $scope.listAllWinners;
   }  

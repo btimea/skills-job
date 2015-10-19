@@ -20,7 +20,7 @@
 <body  style="background-color:white">
   <div class="row"  data-ng-controller="LoginCtrl">
     <nav class="navbar navbar-default">
-      <div class="container-fluid" data-ng-controller="MainCtrl">
+      <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="col-lg-12">
           <div class="navbar-header">
@@ -32,7 +32,8 @@
             <ul class="nav navbar-nav">
               <li class="active"><a ui-sref="home">Home</a></li>
               <li><a ui-sref="regulament">Regulament</a></li>
-              <li ng-if="isState('main')"><a ui-sref="main">Extragere</a></li>
+              <li><a ng-if="authenticationData" ui-sref="main">Extragere</a></li>
+              <li><a ng-if="authenticationData" ui-sref="addArticle">Edit</a></li>
             </ul>
             
             <ul class="nav navbar-nav navbar-right">
@@ -47,6 +48,7 @@
   <div class="row">
     <div class="col-lg-12">
       <i class="imagine antet"></i>
+        
     </div>
   </div>  
 

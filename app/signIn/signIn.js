@@ -23,13 +23,13 @@ app.factory("Auth", ["$firebaseAuth",
 
  
 // Home controller
-app.controller('LoginCtrl', ['$scope','$rootScope','$location','$firebaseAuth','Auth',function($scope,$rootScope,$location,$firebaseAuth,Auth
+app.controller('LoginCtrl', ['$scope','$rootScope','$location','$firebaseAuth','Auth','$state',function($scope,$rootScope,$location,$firebaseAuth,Auth,$state
   ){
-
 
 	var firebaseObj = new Firebase("https://skillsjobs.firebaseio.com");
 	var loginObj = $firebaseAuth(firebaseObj); 
-
+  $scope.authenticationData = firebaseObj.getAuth();
+  
 	$scope.SignIn = function(e) {
     e.preventDefault();
     var username = $scope.user.email;
@@ -43,11 +43,11 @@ app.controller('LoginCtrl', ['$scope','$rootScope','$location','$firebaseAuth','
         console.log('Authentication successful');
         
         $scope.auth = Auth;
-
         // any time auth status updates, add the user data to scope
         $scope.auth.$onAuth(function(authData) {
         $scope.authData = authData;
         });
+        location.reload();
              
     }, function(error) {
         //Failure callback
@@ -60,6 +60,7 @@ app.controller('LoginCtrl', ['$scope','$rootScope','$location','$firebaseAuth','
   $scope.logout = function() {
     $scope.auth = Auth;
     $scope.auth.$unauth(); 
+    location.reload();
   }
 
 }]);
