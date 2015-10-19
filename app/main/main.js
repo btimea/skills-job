@@ -22,8 +22,11 @@ var app = angular.module('myApp.main', ['ui.router',"firebase",'ngSanitize', 'ng
 }])
  
  
-app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http','growl', function($scope,$firebaseObject,$firebaseArray,$http,growl) {
- 
+app.controller('MainCtrl', ['$scope','$firebaseObject','$firebaseArray','$http','growl','$state', function($scope,$firebaseObject,$firebaseArray,$http,growl,$state) {
+
+$scope.isState = function (state) {
+  var stateArray = $state.current.name.split(".");
+}
   var ref = new Firebase("https://skillsjobs.firebaseio.com/Articles");
   $scope.data = $firebaseObject(ref);
   var ref2 = new Firebase("https://skillsjobs.firebaseio.com/Castigatori");

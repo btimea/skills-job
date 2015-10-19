@@ -23,13 +23,9 @@ app.factory("Auth", ["$firebaseAuth",
 
  
 // Home controller
-app.controller('LoginCtrl', ['$scope','$rootScope','$location','$firebaseAuth','Auth',function($scope,$rootScope,$location,$firebaseAuth,Auth,$state
+app.controller('LoginCtrl', ['$scope','$rootScope','$location','$firebaseAuth','Auth',function($scope,$rootScope,$location,$firebaseAuth,Auth
   ){
 
-
-  // $scope.isState = function (state) {
-  //      var stateArray = $state.current.name.split(".");
-  //    }
 
 	var firebaseObj = new Firebase("https://skillsjobs.firebaseio.com");
 	var loginObj = $firebaseAuth(firebaseObj); 

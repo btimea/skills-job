@@ -18,9 +18,9 @@
 
 </head>
 <body  style="background-color:white">
-  <div class="row"  ng-controller="LoginCtrl">
+  <div class="row"  data-ng-controller="LoginCtrl">
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
+      <div class="container-fluid" data-ng-controller="MainCtrl">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="col-lg-12">
           <div class="navbar-header">
@@ -32,7 +32,7 @@
             <ul class="nav navbar-nav">
               <li class="active"><a ui-sref="home">Home</a></li>
               <li><a ui-sref="regulament">Regulament</a></li>
-              <li><a ui-sref="main">Extragere</a></li>
+              <li ng-if="isState('main')"><a ui-sref="main">Extragere</a></li>
             </ul>
             
             <ul class="nav navbar-nav navbar-right">
