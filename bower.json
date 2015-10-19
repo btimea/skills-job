@@ -3,7 +3,6 @@
   "description": "A starter project for AngularJS",
   "version": "0.0.0",
   "homepage": "https://github.com/angular/angular-seed",
-  "html5-boilerplate": "~5.2.0",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -12,6 +11,7 @@
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
     "angular-growl": "~0.4.0",
-    "angular-ui-router": "~0.2.15"   
+    "angular-ui-router": "~0.2.15",
+    "html5-boilerplate": "~5.2.0"   
   }
 }
