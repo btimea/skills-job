@@ -40,6 +40,9 @@
 .m-t-md {
   margin-top:40px;
 }
+.m-b-md {
+  margin-bottom:40px;
+}
 
 
 .p-b-sm {
@@ -53,6 +56,29 @@
 .border-b-sm {
   border-bottom: 1px solid #eee;
 }
+
+ .red {
+    background-color: #F52F1D !important;
+    border-color: #F2022E !important;
+  }
+  
+  .orange {
+    background-color: #F96C0D !important;
+    border-color: #FF7112 !important;
+  }
+  .yellow {
+    background-color: #FDEE16 !important;
+    border-color: #FBEB01 !important;
+  }
+  .blue-text {
+    color:#337ab7;
+  }
+
+  .full-stretch {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
 
 .storm-icons {
   display: inline-block;
@@ -129,12 +155,4 @@ body {
     border-top-right-radius: 0;
   }
 
-.test {
-  border-bottom: 1px solid red !important;
-}
-.test2 {
-  border-bottom: 2px solid red !important;
-}
-.test3 {
-   border-bottom: 3px solid red !important;
-}
+ 

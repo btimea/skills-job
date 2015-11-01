@@ -3,8 +3,7 @@
  
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
- 
+
     <title>AngularJS & Firebase Web App</title>
  
     
@@ -13,8 +12,10 @@
  
 <body>
     <div class="container m-b-xl" ng-controller="MainCtrl" >
-        <div class="page-header">
-            <h1>Skills For Jobs</h1>
+        <div class="page-header blue-text">
+            <h1><b>Skills For Jobs</b></h1>
+            <h4>AJOFM Cluj</h4>
+
         </div>
         <div class="row">
             <div class="form-group col-lg-6 col-md-12">
@@ -31,29 +32,67 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <button type="button" class="btn btn-primary" ng-click="filterIt(search.scoala)">Extrage</button>
-                <button type="button" class="btn btn-primary" ng-csv="winnersData" csv-header="getHeader()" filename="test.csv">Exporta</button>
+       <!--  <div ng-if ="!accesExtragere">
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="button" class="btn btn-primary"  ng-click="validareElevi()" ng-csv="eleviPerScoala" csv-header="getHeader()" filename="elevi.csv">Exporta</button>
+                    <button type="button" class="btn btn-primary" ng-if="accesValidare" ng-click="startExtragere()">Validare</button>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 p-sm">
-                <div growl></div>
-            </div>    
-        </div>
-        
-        <div class="row">    
-            <div class="col-lg-8 col-lg-offset-2 p-sm"><img src="assets/img/random.gif" alt="Smiley face" height="80" width="718" ng-show="loading">
-            </div>
-            <div class="col-lg-8 col-lg-offset-2">
-                <div class="list-group m-t-md item" id="filterJResults"  ng-repeat="item in winnersData ">
-                    <div class="list-group-item active">
-                        <h4 class="list-group-item-heading" ng-class="{test: item.idOrd ===1, test2: item.idOrd === 2, test3: item.idOrd === 3}">{{item.idOrd}} . {{item.nume}}</h4> 
+           
+            <div class="row">    
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="list-group m-t-md" id="filterJResults"  ng-repeat="item in eleviPerScoala ">
+                        <div class="list-group-item active">
+                            <h4 class="list-group-item-heading">{{item.nume}}</h4>
+                            <p> Clasa: {{item.clasa}} -a </p> 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>     -->
+        <div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="button" class="btn btn-primary" ng-click="filterIt(search.scoala)">Extrage</button>
+                    <button type="button" class="btn btn-primary" ng-csv="winnersData" csv-header="getHeader()" filename="test.csv">Exporta</button>
+                   <!--  <button type="button" ng-click="ShowAllWinners()"class="btn btn-primary" ng-csv="castigatori" csv-header="getHeaderCastigatoriTotal()" filename="test.csv">Export total</button> -->
+                </div>
+            </div>
+            <div ng-show="afisaj==false" class="row">
+                <div class="col-lg-8 col-lg-offset-2 p-sm">
+                    <div growl></div>
+                </div>    
+            </div>
+        
+            <div class="row">    
+                <div  ng-show="afisaj" class="col-lg-8 col-lg-offset-2  m-t-md" >
+                    <div class="list-group m-t-md">
+                        <div class="list-group-item active">
+                            <h4 id='afisare1' class="list-group-item-heading"></h4> 
+                        </div>
+                    </div>
+                     <div class="list-group m-t-md"> 
+                        <div class="list-group-item active">
+                            <h4 id='afisare2' class="list-group-item-heading"></h4> 
+                        </div>
+                    </div>
+                    <div class="list-group  m-t-md">     
+                        <div class="list-group-item active">
+                            <h4 id='afisare3' class="list-group-item-heading"></h4>
+                        </div>
+                    </div>   
+                </div>
+            
+                <div ng-show="afisaj==false" class="col-lg-8 col-lg-offset-2">
+                    <div class="list-group m-t-md item"  ng-repeat="item in winnersData">
+                        <div class="list-group-item active" ng-class="{red: item.idOrd===1, orange: item.idOrd===2, yellow:item.idOrd===3}">
+                            <h4 class="list-group-item-heading">{{item.idOrd}} . {{item.nume}}</h4> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
     </div>
 </body> 
 </html>

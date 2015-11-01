@@ -22,7 +22,7 @@ var app = angular.module('myApp.main', ['ui.router',"firebase",'ngSanitize', 'ng
 }])
  
  
-app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseArray','$http','growl','$state', function($scope,$rootScope,$firebaseObject,$firebaseArray,$http,growl,$state) {
+app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseArray','$timeout','$http','growl','$state','$q', function($scope,$rootScope,$firebaseObject,$firebaseArray,$timeout,$http,growl,$state,$q) {
   
   var ref = new Firebase("https://skillsjobs.firebaseio.com/Articles");
   $scope.data = $firebaseObject(ref);
@@ -36,6 +36,9 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   $scope.judete = ["Bihor","Bistrita-Nasaud","Cluj","Hunedoara","Maramures","Salaj","Timis"];
   $scope.search = {}; 
   $scope.scoliAlese = [];
+  $scope.accesExtragere = false;
+  $scope.accesValidare = false;
+  $scope.obiect = {};
  
 
   $http.get('main/scoli.json').success(function(data) {
@@ -64,99 +67,202 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   };
 
 
-   $scope.getHeaderCastigatoriTotal = function () {
+  $scope.getHeaderCastigatoriTotal = function () {
     return ["Ord","Judet","Nume","Scoala"]
   };
 
-    $scope.getHeaderCastigatori = function () {
+  $scope.getHeaderCastigatori = function () {
     return ["Ord","Judet","Nume","Scoala"]
   };
+
+  $scope.validareElevi = function (){
+    $scope.eleviPerScoala = []; 
+
+    $scope.data.$loaded()
+    .then(function() {
+      $scope.totalElevi = $scope.data;
+
+      $scope.totalElevi.forEach(function(item){
+        if (item.judet === $scope.search.judet &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
+          $scope.eleviPerScoala.push(item);  
+        }
+      });
+
+    })
+    .finally(function () {
+       $scope.accesValidare = true;
+    })  
+  }
+
+  $scope.startExtragere= function(){
+    $scope.accesExtragere = true;
+  }
 
   $scope.filterIt = function (i){
     $scope.winnersData = [];
-
-    if ($scope.scoliAlese.indexOf(i) <=-1){
-      $scope.scoliAlese.push(i);
-
-      $scope.loading = true;
-      setTimeout(function(){
-        $scope.data.$loaded()
-          .then(function() {
-            $scope.elevi = $scope.data;
-            $scope.filtered = [];
-            $scope.idList = [];
-           
-          
-
-            $scope.elevi.forEach(function(item){
-              $scope.test =item.scoala.toUpperCase();
-
-              if (item.judet === $scope.search.judet &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
-                $scope.filtered.push(item);
-                $scope.idList.push(item.id);
-              }
-            });
-
-            $scope.winnersId = $scope.shuffle($scope.idList).slice(0,3);
-
-            $scope.filtered.forEach(function(item){
-              $scope.winnersId.forEach(function(winId){
-                if(item.id === winId){
-                  $scope.winnersData.push(item);          
-                }
-              })
-            })
-
-
-            for(var i=0;i < $scope.winnersData.length;i++){
-              $scope.winnersData[i].idOrd = i+1;
-            }
-              
-            return $scope.winnersData;
-
-        })
+    var scoliextrPromise;
+   
+    scoliextrPromise =  $scope.scoliextr.$loaded()
+    .then(function(e) {
+      $scope.scoliNeExtr= false;
+      $scope.scoliextr.forEach(function(item){
+        if (item.scoalaExtrasa === $scope.search.scoala && item.judetExtras === $scope.search.judet){
+          $scope.scoliNeExtr=true;
+        }
+       }) 
+    });
          
-           .finally(function () {
-              // Hide loading spinner whether our call succeeded or failed.
-              $scope.winnersData.forEach(function(item){
-                  $scope.castigatori.$add({
-                    idOrd:item.idOrd,
-                    nume: item.nume,
-                    scoala: item.scoala,
-                    judet: item.judet
-                  });    
-                })
-
-               $scope.loading = false;
-              // setTimeout(function(){
-              //   $scope.first = $scope.winnersData[0].nume;
-              //  }, 3000) 
-              // setTimeout(function(){
-              //   $scope.second = $scope.winnersData[1].nume;
-              //  }, 3000) 
-              //  setTimeout(function(){
-              //   $scope.third = $scope.winnersData[2].nume;
-              //  }, 3000) 
+    scoliextrPromise.then(function(){
+      if( $scope.scoliNeExtr == false){
+        $scope.scoliextr.$add({
+          scoalaExtrasa: $scope.search.scoala,
+          judetExtras: $scope.search.judet
+        });
+      }
+    })
 
 
-              growl.success("Extragerea a fost efectuata cu succes");
+    
+    scoliextrPromise.then(function(){
+      if($scope.scoliNeExtr==false)  {
+       
+        // var countUp = function (){
+          $scope.data.$loaded()
+            .then(function() {
+              $scope.elevi = $scope.data;
+              $scope.eleviFiltrati = [];
+              $scope.idList = [];
              
-            });
-        
-      }, 3000) 
+          
+              $scope.elevi.forEach(function(item){
+                if (item.judet === $scope.search.judet &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
+                  $scope.eleviFiltrati.push(item);
+                  $scope.idList.push(item.id);
+                }
+              });
+              
+      
+              var x1 = document.getElementById("afisare1");
+              var s1 = [];
+              $scope.eleviFiltrati.forEach(function(item){
+                s1.push(item.nume);
+              })
+              var i = 0;
+               
+              (function loop() {
+                  x1.innerHTML = s1[i];
+                   if(i >= s1.length-1){
+                    i = 0;
+                  }
+                  if (++i < s1.length) {
+                      setTimeout(loop, 100);
+                     
+                  }
+              })();
 
+              var x2 = document.getElementById("afisare2");
+              var s2 = [];
+              $scope.eleviFiltrati.forEach(function(item){
+                s2.push(item.nume);
+              })
+              var j = s1.length-1;
+               
+              (function loop() {
+                  x2.innerHTML = s2[j];
+                  if(j <= 0){
+                    j = s1.length-1;;
+                  }
+                  if (--j > 0) {
+                      setTimeout(loop, 100);
+                      
+                  }
+              })();
+   
 
-    }
+              var x3 = document.getElementById("afisare3");
+              var s3 = [];
+              $scope.eleviFiltrati.forEach(function(item){
+                s3.push(item.nume);
+              })
+              var t = 3;
+               
+              (function loop() {
+                  x3.innerHTML = s3[t];
+                  if(t >= s3.length-1){
+                    t = 3;
+                  }
+                  if (++t < s3.length) {
+                      setTimeout(loop, 100);
+                      
+                  }
+              })();
 
-    else {
+              $scope.afisaj = true; 
 
-      growl.error("Extragerea aferente acestei scoli a fost deja efectuata. Va rugam selectati alta scoala");
-    }
+              // var timpAfisare = function() {
+              //   $scope.afisaj = false;
+              //  } 
+              // $timeout(timpAfisare,3000);
+  
 
+              $scope.winnersId = $scope.shuffle($scope.idList).slice(0,3);
+
+              $scope.eleviFiltrati.forEach(function(item){
+                $scope.winnersId.forEach(function(winId){
+                  if(item.id === winId){
+                    $scope.winnersData.push(item);          
+                  }
+                })
+              })
+
+              for(var i=0;i < $scope.winnersData.length;i++){
+                $scope.winnersData[i].idOrd = i+1;
+              }
+
+              return $scope.winnersData;
+
+          })
+           
+          .finally(function () {
+              // Hide loading spinner whether our call succeeded or failed.
+            $scope.winnersData.forEach(function(item){
+                $scope.castigatori.$add({
+                  idOrd:item.idOrd,
+                  nume: item.nume,
+                  scoala: item.scoala,
+                  judet: item.judet
+                });    
+              })
+
+               var timpAfisare = function() {
+                $scope.afisaj = false;
+               } 
+              $timeout(timpAfisare,3000);
+              
+           
+             growl.success("Extragerea a fost efectuata cu succes");
+              $scope.search.scoala = {};
+              $scope.search.judet = {};
+             
+          });
+          
+        //}
+        // $timeout(countUp, 1000);
+
+      } 
+
+      else {
+
+        growl.error("Extragerea aferente acestei scoli a fost deja efectuata. Va rugam selectati alta scoala");
+      }
+
+    })
+  
   }
- 
 
 
+
+  
 
   $scope.ShowWinners = function(){
     $scope.listAllWinners=[];

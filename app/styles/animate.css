@@ -21,9 +21,7 @@
 
 
 .item.ng-enter-stagger {
-  /* this will have a 100ms delay between each successive leave animation */
-  transition-delay: 2s;
-  background-image: url('../assets/img/test.gif');
+  	transition-delay: 0.5s;
 	height: 30px;
 	width: 30px;
 	display: inline-block;
