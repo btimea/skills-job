@@ -21,7 +21,7 @@
 
 
 .item.ng-enter-stagger {
-  	transition-delay: 0.5s;
+  	transition-delay: 7s;
 	height: 30px;
 	width: 30px;
 	display: inline-block;

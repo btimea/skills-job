@@ -62,13 +62,13 @@
     border-color: #F2022E !important;
   }
   
-  .orange {
-    background-color: #F96C0D !important;
-    border-color: #FF7112 !important;
+  .blue {
+    background-color: #337ab7 !important;
+    border-color: #205F94 !important;
   }
-  .yellow {
-    background-color: #FDEE16 !important;
-    border-color: #FBEB01 !important;
+  .green {
+    background-color: #2CAF3B !important;
+    border-color: #269233 !important;
   }
   .blue-text {
     color:#337ab7;

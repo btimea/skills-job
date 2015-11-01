@@ -69,11 +69,11 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
 
 
   $scope.getHeaderCastigatoriTotal = function () {
-    return ["Ord","Judet","Nume","Scoala"]
+    return ["Ord","Premiu","Judet","Nume","Scoala"]
   };
 
   $scope.getHeaderCastigatori = function () {
-    return ["Ord","Judet","Nume","Scoala"]
+    return ["Ord","Premiu","Judet","Nume","Scoala"]
   };
 
   $scope.validareElevi = function (){
@@ -132,7 +132,6 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
     scoliextrPromise.then(function(){
       if($scope.scoliNeExtr==false)  {
        
-        // var countUp = function (){
           $scope.data.$loaded()
             .then(function() {
               $scope.elevi = $scope.data;
@@ -178,7 +177,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                   if(j <= 0){
                     j = s2.length-1;
                   }
-                  if (--j > 0) {
+                  if (j-- >= 0) {
                       setTimeout(loop, 100);
                       
                   }
@@ -205,12 +204,12 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
 
               $scope.afisaj = true; 
 
-              var timpAfisare = function() {
-                $scope.afisaj = false;
-               } 
+               var timpAfisare = function() {
+                 $scope.afisaj = false;
+                } 
+                
               $timeout(timpAfisare,3000);
-  
-
+             
               $scope.winnersId = $scope.shuffle($scope.idList).slice(0,3);
 
               $scope.eleviFiltrati.forEach(function(item){
@@ -221,7 +220,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                 })
               })
 
-              var premii=['Premiul III - 500','Premiul II - 700','Premiul I - 1000']
+              var premii=['Premiul III - 500 lei','Premiul II - 700 lei','Premiul I - 1000 lei']
               for(var i=0;i < $scope.winnersData.length;i++){
                 $scope.winnersData[i].idOrd = $scope.winnersData.length-i ;
                 $scope.winnersData[i].premiu = premii[i] ;
@@ -229,40 +228,34 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
 
               return $scope.winnersData;
 
-          })
+          })//then sigur
            
           .finally(function () {
               // Hide loading spinner whether our call succeeded or failed.
             $scope.winnersData.forEach(function(item){
                 $scope.castigatori.$add({
                   idOrd:item.idOrd,
+                  premiu:item.premiu,
                   nume: item.nume,
                   scoala: item.scoala,
                   judet: item.judet
                 });    
-              })
+            })
 
-              //  var timpAfisare = function() {
-              //   $scope.afisaj = false;
-              //  } 
-              // $timeout(timpAfisare,5000);
-              
+             
            
              growl.success("Extragerea a fost efectuata cu succes");
                       
-          });
-          
-        // }
-        // $timeout(countUp, 1000);
-
-      } 
+          }); //finally
+       
+      } //if
 
       else {
 
         growl.error("Extragerea aferente acestei scoli a fost deja efectuata. Va rugam selectati alta scoala");
       }
 
-    })
+    })//then
   
   }
 
@@ -272,22 +265,28 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
 
   $scope.ShowWinners = function(){
     $scope.listAllWinners=[];
-      $scope.castigatori.forEach(function(item){
-          if (item.judet === $scope.search.judet && item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
-            $scope.listAllWinners.push(item);
-          }
-      });
+    $scope.castigatori.forEach(function(item){
+        if (item.judet === $scope.search.judet && item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
+          $scope.listAllWinners.push(item);
+        }
+    });
 
-      for(var i=0;i < $scope.listAllWinners.length;i++){
-        $scope.listAllWinners[i].idOrd = i+1;
-      }
-
+    var premii=['Premiul III - 500 lei','Premiul II - 700 lei','Premiul I - 1000 lei']
+    for(var i=0;i < $scope.listAllWinners.length;i++){
+      $scope.listAllWinners[i].idOrd = $scope.listAllWinners.length-i ;
+      $scope.listAllWinners[i].premiu = premii[i] ;
+    }
+      
        return $scope.listAllWinners;
   } 
 
   $scope.ShowAllWinners = function(){
     return $scope.castigatori
   } 
+
+  $scope.refresh = function (){
+     location.reload();
+  }
 
  
   $scope.shuffle = function (array) {
