@@ -38,6 +38,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   $scope.scoliAlese = [];
   $scope.accesExtragere = false;
   $scope.accesValidare = false;
+  $scope.startExportare = false;
   $scope.obiect = {};
  
 
@@ -94,7 +95,11 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
     })  
   }
 
-  $scope.startExtragere= function(){
+  $scope.startExport= function(){
+    $scope.startExportare = true;
+  }
+
+   $scope.startExtragere= function(){
     $scope.accesExtragere = true;
   }
 
@@ -108,6 +113,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
       $scope.scoliextr.forEach(function(item){
         if (item.scoalaExtrasa === $scope.search.scoala && item.judetExtras === $scope.search.judet){
           $scope.scoliNeExtr=true;
+
         }
        }) 
     });
@@ -165,12 +171,12 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
               $scope.eleviFiltrati.forEach(function(item){
                 s2.push(item.nume);
               })
-              var j = s1.length-1;
+              var j = s2.length-1;
                
               (function loop() {
                   x2.innerHTML = s2[j];
                   if(j <= 0){
-                    j = s1.length-1;;
+                    j = s2.length-1;
                   }
                   if (--j > 0) {
                       setTimeout(loop, 100);
@@ -199,10 +205,10 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
 
               $scope.afisaj = true; 
 
-              // var timpAfisare = function() {
-              //   $scope.afisaj = false;
-              //  } 
-              // $timeout(timpAfisare,3000);
+              var timpAfisare = function() {
+                $scope.afisaj = false;
+               } 
+              $timeout(timpAfisare,3000);
   
 
               $scope.winnersId = $scope.shuffle($scope.idList).slice(0,3);
@@ -215,8 +221,10 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                 })
               })
 
+              var premii=['Premiul III - 500','Premiul II - 700','Premiul I - 1000']
               for(var i=0;i < $scope.winnersData.length;i++){
-                $scope.winnersData[i].idOrd = i+1;
+                $scope.winnersData[i].idOrd = $scope.winnersData.length-i ;
+                $scope.winnersData[i].premiu = premii[i] ;
               }
 
               return $scope.winnersData;
@@ -234,19 +242,17 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                 });    
               })
 
-               var timpAfisare = function() {
-                $scope.afisaj = false;
-               } 
-              $timeout(timpAfisare,3000);
+              //  var timpAfisare = function() {
+              //   $scope.afisaj = false;
+              //  } 
+              // $timeout(timpAfisare,5000);
               
            
              growl.success("Extragerea a fost efectuata cu succes");
-              $scope.search.scoala = {};
-              $scope.search.judet = {};
-             
+                      
           });
           
-        //}
+        // }
         // $timeout(countUp, 1000);
 
       } 

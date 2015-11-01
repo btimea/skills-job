@@ -32,11 +32,12 @@
                 </select>
             </div>
         </div>
-       <!--  <div ng-if ="!accesExtragere">
+        <div ng-if ="!accesExtragere">
             <div class="row">
                 <div class="col-lg-12">
-                    <button type="button" class="btn btn-primary"  ng-click="validareElevi()" ng-csv="eleviPerScoala" csv-header="getHeader()" filename="elevi.csv">Exporta</button>
-                    <button type="button" class="btn btn-primary" ng-if="accesValidare" ng-click="startExtragere()">Validare</button>
+                     <button type="button" class="btn btn-primary" ng-click="validareElevi()">Afisare</button>
+                    <button type="button" class="btn btn-primary"  ng-if="accesValidare" ng-click="startExport()" ng-csv="eleviPerScoala" csv-header="getHeader()" filename="elevi.csv">Export</button>
+                    <button type="button" class="btn btn-primary" ng-if="startExportare" ng-click="startExtragere()">Validare</button>
                 </div>
             </div>
            
@@ -50,9 +51,9 @@
                     </div>
                 </div>
             </div>
-        </div>     -->
-        <div>
-            <div class="row">
+        </div>    
+        <div ng-if ="accesExtragere">
+            <div class="row" >
                 <div class="col-lg-12">
                     <button type="button" class="btn btn-primary" ng-click="filterIt(search.scoala)">Extrage</button>
                     <button type="button" class="btn btn-primary" ng-csv="winnersData" csv-header="getHeader()" filename="test.csv">Exporta</button>
@@ -87,10 +88,11 @@
                 <div ng-show="afisaj==false" class="col-lg-8 col-lg-offset-2">
                     <div class="list-group m-t-md item"  ng-repeat="item in winnersData">
                         <div class="list-group-item active" ng-class="{red: item.idOrd===1, orange: item.idOrd===2, yellow:item.idOrd===3}">
-                            <h4 class="list-group-item-heading">{{item.idOrd}} . {{item.nume}}</h4> 
+                            <h4 class="list-group-item-heading">{{item.idOrd}} . {{item.nume}}  {{item.premiu}}</h4> 
                         </div>
                     </div>
                 </div>
+               <audio  ng-if="afisaj" loop='true'  autoplay="true" src="assets/ball.mp3">
             </div>
         </div>    
     </div>

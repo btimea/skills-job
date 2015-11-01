@@ -19,11 +19,11 @@ var app = angular.module('myApp.addArticle', ['ui.router',"firebase"])
  
 app.controller('AddArticleCtrl',function($scope,$firebaseArray) {
    
-    var ref= new Firebase("https://skillsjobs.firebaseio.com/Articles");
-	$scope.messages = $firebaseArray(ref);
-	//$scope.article = {};
+    var ref = new Firebase("https://skillsjobs.firebaseio.com/Articles");
+	$scope.adaugare = $firebaseArray(ref);
+	$scope.article = {};
 	$scope.AddArticle = function() {
-	 	$scope.messages.$add({
+	 	$scope.adaugare.$add({
 	       	id: $scope.article.id,
 			grup: $scope.article.grup,
 			data: $scope.article.data,
