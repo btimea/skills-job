@@ -40,7 +40,7 @@
                         <button  type="button" class="btn btn-primary" ng-click="ShowWinners()">Vizualizeaza</button>
                     </div>    
                 </div>  
-                <div class="list-group m-t-md" id="filterJResults"  ng-repeat="item in listAllWinners">
+                <div class="list-group m-t-md" id="filterJResults"  ng-repeat="item in listAllWinners | orderBy:'-'">
                     <a href="#" class="list-group-item active">
                         <h3 class="list-group-item-heading">{{item.premiu}}</h3>
                         <h4 class="list-group-item-heading">{{item.nume}}</h4>

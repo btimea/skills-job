@@ -40,6 +40,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   $scope.accesValidare = false;
   $scope.startExportare = false;
   $scope.obiect = {};
+  var premii=['Premiul III - 500 lei','Premiul II - 700 lei','Premiul I - 1000 lei']
  
 
   $http.get('main/scoli.json').success(function(data) {
@@ -202,7 +203,8 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                   }
               })();
 
-              $scope.afisaj = true; 
+              $scope.afisaj = true;
+              $scope.sunet =true; 
 
                var timpAfisare = function() {
                  $scope.afisaj = false;
@@ -220,7 +222,6 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                 })
               })
 
-              var premii=['Premiul III - 500 lei','Premiul II - 700 lei','Premiul I - 1000 lei']
               for(var i=0;i < $scope.winnersData.length;i++){
                 $scope.winnersData[i].idOrd = $scope.winnersData.length-i ;
                 $scope.winnersData[i].premiu = premii[i] ;
@@ -271,7 +272,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
         }
     });
 
-    var premii=['Premiul III - 500 lei','Premiul II - 700 lei','Premiul I - 1000 lei']
+   
     for(var i=0;i < $scope.listAllWinners.length;i++){
       $scope.listAllWinners[i].idOrd = $scope.listAllWinners.length-i ;
       $scope.listAllWinners[i].premiu = premii[i] ;
