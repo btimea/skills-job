@@ -25,7 +25,6 @@ app.controller('AddArticleCtrl',function($scope,$firebaseArray) {
 	$scope.AddArticle = function() {
 	 	$scope.adaugare.$add({
 	       	id: $scope.article.id,
-			grup: $scope.article.grup,
 			data: $scope.article.data,
 			nume: $scope.article.nume,
 			sex: $scope.article.sex,

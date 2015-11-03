@@ -13,7 +13,7 @@ angular.module('myApp', [
 config(['$urlRouterProvider','growlProvider', function($urlRouterProvider,growlProvider) {
     // Set defualt view of our app to home
    $urlRouterProvider.otherwise("/home");
-   growlProvider.globalTimeToLive(5000);
+   growlProvider.globalTimeToLive(200000);
 
 }]);
 

@@ -64,17 +64,15 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
 
   }
    
+  $scope.getHeaderTotal = function () {
+    return ["CNP","Clasa", "Data", "Email","Id unic JVIS","Judet", "Mediu","Nume si Prenume","Scoala","Sex","Varsta"]
+  }; 
   $scope.getHeader = function () {
-    return ["CNP","Clasa", "Data", "Email", "Grup", "Id", "Judet", "Mediu","Nume","Scoala","Sex","Varsta","Ord"]
-  };
-
-
-  $scope.getHeaderCastigatoriTotal = function () {
-    return ["Ord","Premiu","Judet","Nume","Scoala"]
+    return ["CNP","Clasa", "Data", "Email","Id unic JVIS","Judet", "Mediu","Nume si Prenume","Scoala","Sex","Varsta","Ord","Premiul"]
   };
 
   $scope.getHeaderCastigatori = function () {
-    return ["Ord","Premiu","Judet","Nume","Scoala"]
+    return ["Ord","Judet","Nume si Prenume","Premiul","Scoala"]
   };
 
   $scope.validareElevi = function (){
@@ -85,7 +83,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
       $scope.totalElevi = $scope.data;
 
       $scope.totalElevi.forEach(function(item){
-        if (item.judet === $scope.search.judet &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
+        if (item.judet.toUpperCase() === $scope.search.judet.toUpperCase() &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
           $scope.eleviPerScoala.push(item);  
         }
       });
@@ -112,7 +110,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
     .then(function(e) {
       $scope.scoliNeExtr= false;
       $scope.scoliextr.forEach(function(item){
-        if (item.scoalaExtrasa === $scope.search.scoala && item.judetExtras === $scope.search.judet){
+        if (item.scoalaExtrasa.toUpperCase() === $scope.search.scoala.toUpperCase() && item.judetExtras.toUpperCase() === $scope.search.judet.toUpperCase()){
           $scope.scoliNeExtr=true;
 
         }
@@ -132,7 +130,6 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
     
     scoliextrPromise.then(function(){
       if($scope.scoliNeExtr==false)  {
-       
           $scope.data.$loaded()
             .then(function() {
               $scope.elevi = $scope.data;
@@ -141,7 +138,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
              
           
               $scope.elevi.forEach(function(item){
-                if (item.judet === $scope.search.judet &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
+                if (item.judet.toUpperCase() === $scope.search.judet.toUpperCase() &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
                   $scope.eleviFiltrati.push(item);
                   $scope.idList.push(item.id);
                 }
@@ -161,7 +158,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                     i = 0;
                   }
                   if (++i < s1.length) {
-                      setTimeout(loop, 100);
+                      $timeout(loop, 100);
                      
                   }
               })();
@@ -179,7 +176,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                     j = s2.length-1;
                   }
                   if (j-- >= 0) {
-                      setTimeout(loop, 100);
+                      $timeout(loop, 100);
                       
                   }
               })();
@@ -198,7 +195,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                     t = 3;
                   }
                   if (++t < s3.length) {
-                      setTimeout(loop, 100);
+                      $timeout(loop, 100);
                       
                   }
               })();
@@ -210,7 +207,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                  $scope.afisaj = false;
                 } 
                 
-              $timeout(timpAfisare,3000);
+              $timeout(timpAfisare,5000);
              
               $scope.winnersId = $scope.shuffle($scope.idList).slice(0,3);
 
@@ -243,17 +240,17 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
                 });    
             })
 
-             
-           
              growl.success("Extragerea a fost efectuata cu succes");
+
                       
-          }); //finally
+          }); //finally  
        
       } //if
 
       else {
-
-        growl.error("Extragerea aferente acestei scoli a fost deja efectuata. Va rugam selectati alta scoala");
+       
+          // growl.error("Extragerea aferente acestei scoli a fost deja efectuata. Va rugam selectati alta scoala");
+          alert("Extragerea aferente acestei scoli a fost deja efectuata. Va rugam selectati alta scoala");   
       }
 
     })//then
@@ -267,7 +264,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   $scope.ShowWinners = function(){
     $scope.listAllWinners=[];
     $scope.castigatori.forEach(function(item){
-        if (item.judet === $scope.search.judet && item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
+        if (item.judet.toUpperCase() === $scope.search.judet.toUpperCase() && item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
           $scope.listAllWinners.push(item);
         }
     });
