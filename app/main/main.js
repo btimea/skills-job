@@ -33,7 +33,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   var ref3 = new Firebase("https://skillsjobs.firebaseio.com/Scoliextr");
   $scope.scoliextr = $firebaseArray(ref3);
 
-  $scope.judete = ["Bihor","Bistrita-Nasaud","Cluj","Hunedoara","Maramures","Salaj","Timis"];
+  $scope.judete = ["Maramures"];
   $scope.search = {}; 
   $scope.scoliAlese = [];
   $scope.accesExtragere = false;
@@ -83,7 +83,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
       $scope.totalElevi = $scope.data;
 
       $scope.totalElevi.forEach(function(item){
-        if (item.judet.toUpperCase() === $scope.search.judet.toUpperCase() &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
+        if (item.judet === $scope.search.judet &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
           $scope.eleviPerScoala.push(item);  
         }
       });
@@ -138,7 +138,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
              
           
               $scope.elevi.forEach(function(item){
-                if (item.judet.toUpperCase() === $scope.search.judet.toUpperCase() &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
+                if (item.judet === $scope.search.judet &&  item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
                   $scope.eleviFiltrati.push(item);
                   $scope.idList.push(item.id);
                 }
@@ -264,7 +264,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   $scope.ShowWinners = function(){
     $scope.listAllWinners=[];
     $scope.castigatori.forEach(function(item){
-        if (item.judet.toUpperCase() === $scope.search.judet.toUpperCase() && item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
+        if (item.judet === $scope.search.judet && item.scoala.toUpperCase() === $scope.search.scoala.toUpperCase()) {
           $scope.listAllWinners.push(item);
         }
     });
