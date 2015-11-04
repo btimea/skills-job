@@ -96,15 +96,10 @@
        "judet": "Maramures",
        "scoala": "LICEUL TEHNOLOGIC TRAIAN VUIA"  
     },
-     {
+    {
        "id":105,
        "judet": "Maramures",
-       "scoala": "LICEUL TEHNOLOGIC VISEUL DE SUS"  
-    },
-     {
-       "id":106,
-       "judet": "Maramures",
-       "scoala": "LICEUL TEOLOLOGIC PENTICOSTAL "  
+       "scoala": "LTVdS LTP LTLK"  
     },
     {
        "id":107,
@@ -120,11 +115,6 @@
        "id":109,
        "judet": "Maramures",
        "scoala": "LICEUL TEORETIC IOAN BUTEANU"  
-    },
-    {
-       "id":110,
-       "judet": "Maramures",
-       "scoala": "LICEUL TEORETIC LEOWEY KLARA"  
     },
      {
        "id":111,

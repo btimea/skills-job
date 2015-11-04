@@ -65,10 +65,10 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   }
    
   $scope.getHeaderTotal = function () {
-    return ["CNP","Clasa", "Data", "Email","Id unic JVIS","Judet", "Mediu","Nume si Prenume","Scoala","Sex","Varsta"]
+    return ["CNP","Clasa", "Data", "Email","Id unic JVIS","Judet","Nume si Prenume","Scoala","Varsta"]
   }; 
   $scope.getHeader = function () {
-    return ["CNP","Clasa", "Data", "Email","Id unic JVIS","Judet", "Mediu","Nume si Prenume","Scoala","Sex","Varsta","Ord","Premiul"]
+    return ["CNP","Clasa", "Data", "Email","Id unic JVIS","Judet","Nume si Prenume","Scoala","Varsta","Ord","Premiul"]
   };
 
   $scope.getHeaderCastigatori = function () {
