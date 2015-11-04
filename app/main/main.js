@@ -33,7 +33,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   var ref3 = new Firebase("https://skillsjobs.firebaseio.com/Scoliextr");
   $scope.scoliextr = $firebaseArray(ref3);
 
-  $scope.judete = ["Maramures"];
+  $scope.judete = ["Bihor","Bistrita-Nasaud","Cluj","Hunedoara","Maramures","Salaj","Timis"];
   $scope.search = {}; 
   $scope.scoliAlese = [];
   $scope.accesExtragere = false;
