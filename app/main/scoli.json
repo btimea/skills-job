@@ -130,6 +130,24 @@
        "id":113,
        "judet": "Maramures",
        "scoala": "LICEULTEHNOLOGIC AGRICOL ALEXIU BERINDE "  
+    },
+    {
+       "id":114,
+       "judet": "Salaj",
+       "scoala": "COLEGIUL NATIONAL SILVANIA"  
+    },
+    
+    {
+       "id":115,
+       "judet": "Salaj",
+       "scoala": "COLEGIUL NATIONAL SIMION BARNUTIU"  
+    },
+    
+    {
+       "id":116,
+       "judet": "Salaj",
+       "scoala": "COLEGIUL TEHNIC ALESANDRU PAPIU ILARIAN"  
     }
+    
   ]  
    
