@@ -24,13 +24,13 @@ var app = angular.module('myApp.main', ['ui.router',"firebase",'ngSanitize', 'ng
  
 app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseArray','$timeout','$http','growl','$state','$q', function($scope,$rootScope,$firebaseObject,$firebaseArray,$timeout,$http,growl,$state,$q) {
   
-  var ref = new Firebase("https://burning-heat-5959.firebaseio.com/Articles");
+  var ref = new Firebase("https://skillsjobs.firebaseio.com/Articles");
   $scope.data = $firebaseObject(ref);
 
-  var ref2 = new Firebase("https://burning-heat-5959.firebaseio.com/Castigatori");
+  var ref2 = new Firebase("https://skillsjobs.firebaseio.com/Castigatori");
   $scope.castigatori = $firebaseArray(ref2);
 
-  var ref3 = new Firebase("https://burning-heat-5959.firebaseio.com/Scoliextr");
+  var ref3 = new Firebase("https://skillsjobs.firebaseio.com/Scoliextr");
   $scope.scoliextr = $firebaseArray(ref3);
 
   $scope.judete = ["Bihor","Bistrita-Nasaud","Cluj","Hunedoara","Maramures","Salaj","Timis"];
