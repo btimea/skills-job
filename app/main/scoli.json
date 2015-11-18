@@ -147,7 +147,31 @@
        "id":116,
        "judet": "Salaj",
        "scoala": "COLEGIUL TEHNIC ALESANDRU PAPIU ILARIAN"  
+    },
+     {
+       "id":117,
+       "judet": "Bistrita-Nasaud",
+       "scoala": "COLEGIUL TEHNIC INFOEL"  
     }
+    ,
+     {
+       "id":118,
+       "judet": "Bistrita-Nasaud",
+       "scoala": "COLEGIUL NATIONAL LIVIU REBREANU"  
+    }
+    ,
+     {
+       "id":119,
+       "judet": "Bistrita-Nasaud",
+       "scoala": "COLEGIUL NATIONAL ANDREI MURESANU"  
+    }
+    ,
+     {
+       "id":120,
+       "judet": "Bistrita-Nasaud",
+       "scoala": "COLEGIUL NATIONAL PETRU RARES"  
+    }
+  
     
   ]  
    
