@@ -171,7 +171,328 @@
        "judet": "Bistrita-Nasaud",
        "scoala": "COLEGIUL NATIONAL PETRU RARES"  
     }
-  
-    
+     ,
+     {
+       "id":120,
+       "judet": "Bistrita-Nasaud",
+       "scoala": "COLEGIUL NATIONAL PETRU RARES"  
+    }
+     ,
+     {
+       "id":121,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL DE MUZICA \"SIGISMUND TODUTA\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":122,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL ECONOMIC \"IULIAN POP\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":123,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL NATIONAL \"ANDREI MURESANU\" DEJ"  
+    }
+     ,
+     {
+       "id":124,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL NATIONAL \"EMIL RACOVITA\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":125,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL NATIONAL \"GEORGE BARITIU\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":126,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL NATIONAL \"GEORGE COSBUC\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":127,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL NATIONAL \"MIHAI VITEAZUL\" TURDA"  
+    }
+     ,
+     {
+       "id":128,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL NATIONAL PEDAGOGIC \"GHEORGHE LAZAR\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":129,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC \"ANA ASLAN\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":130,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC \"ANGHEL SALIGNY\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":131,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC \"DR. IOAN RATIU\" TURDA"  
+    }
+     ,
+     {
+       "id":132,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC \"EDMOND NICOLAU\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":133,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC \"NAPOCA\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":134,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC \"RALUCA RIPAN\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":135,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC \"VICTOR UNGUREANU\" CAMPIA TURZII"  
+    }
+     ,
+     {
+       "id":136,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC DE COMUNICATII \"AUGUSTIN MAIOR\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":136,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC DE TRANSPORTURI \"TRANSILVANIA\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":137,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC ENERGETIC CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":138,
+       "judet": "Cluj",
+       "scoala": "COLEGIUL TEHNIC TURDA"  
+    }
+     ,
+     {
+       "id":139,
+       "judet": "Cluj",
+       "scoala": "LICEUL \"JANOS ZSIGMOND\" CLUJ-NAPOCA"  
+    },
+    {
+       "id":140,
+       "judet": "Cluj",
+       "scoala": "LICEUL CU PROGRAM SPORTIV CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":141,
+       "judet": "Cluj",
+       "scoala": "LICEUL DE ARTE VIZUALE \"ROMULUS LADEA\" CLUJ-NAPOCA"  
+    },  
+    {
+       "id":142,
+       "judet": "Cluj",
+       "scoala": "LICEUL DE COREGRAFIE SI ARTA DRAMATICA \"OCTAVIAN STROIA\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":143,
+       "judet": "Cluj",
+       "scoala": "LICEUL DE INFORMATICA \"TIBERIU POPOVICIU\" CLUJ-NAPOCA"  
+    },  
+    {
+       "id":145,
+       "judet": "Cluj",
+       "scoala": "LICEUL GRECO-CATOLIC \"INOCHENTIE MICU\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":146,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEHNOLOGIC \"ALEXANDRU BORZA\" CLUJ-NAPOCA"  
+    },  
+    {
+       "id":147,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEHNOLOGIC \"AUREL VLAICU\" CLUJ-NAPOCA"  
+    }
+     ,
+     {
+       "id":148,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEHNOLOGIC \"CONSTANTIN BRANCUSI\" DEJ"  
+    }, 
+    {
+       "id":149,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEHNOLOGIC \"SOMES\" DEJ"  
+    }
+     ,
+     {
+       "id":150,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEHNOLOGIC \"STEFAN PASCU\" APAHIDA"  
+    },  
+    {
+       "id":151,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEHNOLOGIC \"VLADEASA\" HUEDIN"  
+    }
+     ,
+     {
+       "id":152,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEHNOLOGIC GHERLA"  
+    },
+     {
+       "id":153,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEHNOLOGIC NR. 1 CLUJ-NAPOCA"  
+    },
+     {
+       "id":154,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEOLOGIC ADVENTIST \"MARANATHA\" CLUJ-NAPOCA"  
+    },
+     {
+       "id":155,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEOLOGIC BAPTIST \"EMANUEL\" CLUJ-NAPOCA"  
+    },      
+     {
+       "id":156,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEOLOGIC REFORMAT CLUJ-NAPOCA"  
+    },
+     {
+       "id":157,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"ALEXANDRU PAPIU ILARIAN\" DEJ"  
+    },      
+     {
+       "id":158,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"ANA IPATESCU\" GHERLA"  
+    },
+     {
+       "id":159,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"APACZAI CSERE JANOS\" CLUJ-NAPOCA"  
+    },      
+     {
+       "id":160,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"AVRAM IANCU\" CLUJ-NAPOCA"  
+    },
+     {
+       "id":161,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"BATHORY ISTVAN\" CLUJ-NAPOCA"  
+    },      
+     {
+       "id":162,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"BRASSAI SAMUEL\" CLUJ-NAPOCA"  
+    },
+     {
+       "id":163,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"EUGEN PORA\" CLUJ-NAPOCA"  
+    },
+     {
+       "id":164,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"GELU VOIEVOD\" GILAU"  
+    },
+     {
+       "id":165,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"GHEORGHE SINCAI\" CLUJ-NAPOCA"  
+    },
+     {
+       "id":166,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"JOSIKA MIKLOS\" TURDA"  
+    },
+     {
+       "id":167,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"LIVIU REBREANU\" TURDA"  
+    },
+     {
+       "id":168,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"LUCIAN BLAGA\" CLUJ-NAPOCA"  
+    },
+     {
+       "id":169,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"MIHAI EMINESCU\" CLUJ-NAPOCA"  
+    },
+    {
+       "id":170,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"LUCIAN BLAGA\" CLUJ-NAPOCA"  
+    },
+     {
+       "id":171,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"MIHAI EMINESCU\" CLUJ-NAPOCA"  
+    },
+    {
+       "id":172,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"NICOLAE BALCESCU\" CLUJ-NAPOCA"  
+    },
+     {
+       "id":173,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"OCTAVIAN GOGA\" HUEDIN"  
+    },
+    {
+       "id":174,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"ONISIFOR GHIBU\" CLUJ-NAPOCA"  
+    },
+     {
+       "id":175,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"PAVEL DAN\" CAMPIA TURZII"  
+    },
+     {
+       "id":176,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"PETRU MAIOR\" GHERLA"  
+    },
+     {
+       "id":177,
+       "judet": "Cluj",
+       "scoala": "LICEUL TEORETIC \"VICTOR BABES\" CLUJ-NAPOCA"  
+    },
+    {
+       "id":178,
+       "judet": "Cluj",
+       "scoala": "SEMINARUL TEOLOGIC ORTODOX CLUJ-NAPOCA"  
+    }
+   
   ]  
    
