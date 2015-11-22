@@ -492,7 +492,54 @@
        "id":178,
        "judet": "Cluj",
        "scoala": "SEMINARUL TEOLOGIC ORTODOX CLUJ-NAPOCA"  
+    },
+     {
+       "id":179,
+       "judet": "Bihor",
+       "scoala": "COLEGIUL ECONOMIC PARTENIE COSMA"  
+    },
+     {
+       "id":180,
+       "judet": "Bihor",
+       "scoala": "CNEG LTLB"  
+    },
+     {
+       "id":181,
+       "judet": "Bihor",
+       "scoala": "COLEGIUL NATIONAL SAMUIL VULCAN"  
+    },
+     {
+       "id":182,
+       "judet": "Bihor",
+       "scoala": "COLEGIUL TEHNIC ALEXANDRU ROMAN"  
+    },
+     {
+       "id":183,
+       "judet": "Bihor",
+       "scoala": "COLEGIUL TEHNIC MIHAI VITEAZUL"  
+    },
+     {
+       "id":184,
+       "judet": "Bihor",
+       "scoala": "COLEGIUL TEHNIC VADU CRISULUI"  
+    },
+    {
+       "id":185,
+       "judet": "Bihor",
+       "scoala": "LICEUL DE ARTE"  
+    },
+     {
+       "id":186,
+       "judet": "Bihor",
+       "scoala": "LICEUL TEORETIC ONISIFOR GHIBU"  
+    },
+     {
+       "id":187,
+       "judet": "Bihor",
+       "scoala": "LICEUL VOCATIONAL PEDAGOGIC BOLCAS"  
     }
+
    
   ]  
+   
    
