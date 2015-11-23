@@ -537,6 +537,81 @@
        "id":187,
        "judet": "Bihor",
        "scoala": "LICEUL VOCATIONAL PEDAGOGIC BOLCAS"  
+    },
+     {
+       "id":188,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL NATIONAL AUREL VLAICU"  
+    },
+     {
+       "id":189,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL NATIONAL AVRAM IANCU"  
+    },
+     {
+       "id":190,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL NATIONAL DE INFORMATICA CARMEN SYLVA"  
+    },
+     {
+       "id":191,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL NATIONAL DE INFORMATICA TRAIAN LALESCU"  
+    },
+     {
+       "id":192,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL NATIONAL I. C. BRATIANU"  
+    },
+     {
+       "id":193,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL NATIONAL IANCU DE HUNEDOARA"  
+    },
+     {
+       "id":194,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL NATIONAL MIHAI EMINESCU"  
+    },
+     {
+       "id":195,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL NATIONAL SABIN DRAGOI"  
+    },
+     {
+       "id":196,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL NATIONAL SPORTIV CETATE"  
+    },
+     {
+       "id":197,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL TEHNIC CONSTANTIN BRANCUSI"  
+    },
+     {
+       "id":198,
+       "judet": "Hunedoara",
+       "scoala": "COLEGIUL TEHNIC MIHAI VITEAZU"  
+    },
+     {
+       "id":199,
+       "judet": "Hunedoara",
+       "scoala": "LICEUL TEHNOLOGIC OVID DENSUSIANU"  
+    },
+    {
+       "id":200,
+       "judet": "Hunedoara",
+       "scoala": "LICEUL TEORETIC MIRCEA ELIADE"  
+    },
+     {
+       "id":201,
+       "judet": "Hunedoara",
+       "scoala": "LICEUL TEORETIC SILVIU DRAGOMIR"  
+    },
+     {
+       "id":201,
+       "judet": "Hunedoara",
+       "scoala": "LICEUL TEORETIC TEGLAS GABOR"  
     }
 
    
