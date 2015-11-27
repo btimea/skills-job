@@ -609,12 +609,116 @@
        "scoala": "LICEUL TEORETIC SILVIU DRAGOMIR"  
     },
      {
-       "id":201,
+       "id":202,
        "judet": "Hunedoara",
        "scoala": "LICEUL TEORETIC TEGLAS GABOR"  
+    },
+     {
+       "id":203,
+       "judet": "Timis",
+       "scoala": "COLEGIUL ECONOMIC FRANCESCO SAVERIO NITTI"  
+    },
+     {
+       "id":204,
+       "judet": "Timis",
+       "scoala": "COLEGIUL NATIONAL CORIOLAN BREDICEANU"  
+    },
+     {
+       "id":205,
+       "judet": "Timis",
+       "scoala": "COLEGIUL NATIONAL IULIA HASDEU"  
+    },
+     {
+       "id":206,
+       "judet": "Timis",
+       "scoala": "COLEGIUL TEHNIC AZUR"  
+    },
+     {
+       "id":207,
+       "judet": "Timis",
+       "scoala": "COLEGIUL TEHNIC DIMITRIE LEONIDA"  
+    },
+     {
+       "id":208,
+       "judet": "Timis",
+       "scoala": "COLEGIUL TEHNIC ELECTROTIMIS"  
+    },
+     {
+       "id":209,
+       "judet": "Timis",
+       "scoala": "COLEGIUL TEHNIC EMANUIL UNGUREANU"  
+    },
+     {
+       "id":210,
+       "judet": "Timis",
+       "scoala": "COLEGIUL TEHNIC HENRI COANDA"  
+    },
+     {
+       "id":211,
+       "judet": "Timis",
+       "scoala": "COLEGIUL TEHNIC ION I. C. BRATIANU"  
+    },
+     {
+       "id":212,
+       "judet": "Timis",
+       "scoala": "COLEGIUL TEHNIC ION MINCU"  
+    },
+     {
+       "id":213,
+       "judet": "Timis",
+       "scoala": "LICEUL PEDAGOGIC CARMEN SYLVA"  
+    },
+     {
+       "id":214,
+       "judet": "Timis",
+       "scoala": "LICEUL TEHNOLOGIC CRISTOFOR NAKO"  
+    },
+     {
+       "id":215,
+       "judet": "Timis",
+       "scoala": "LICEUL TEHNOLOGIC DE INDUSTRIE ALIMENTARA"  
+    },
+     {
+       "id":216,
+       "judet": "Timis",
+       "scoala": "LICEUL TEHNOLOGIC DE TRANSPORTURI AUTO"  
+    },
+     {
+       "id":217,
+       "judet": "Timis",
+       "scoala": "LICEUL TEHNOLOGIC ROMULUS PARASCHIVOIU"  
+    },
+     {
+       "id":218,
+       "judet": "Timis",
+       "scoala": "LICEUL TEHNOLOGIC SF. NICOLAE DETA"  
+    },
+     {
+       "id":219,
+       "judet": "Timis",
+       "scoala": "LICEUL TEOLOGIC BAPTIST"  
+    },
+     {
+       "id":220,
+       "judet": "Timis",
+       "scoala": "LICEUL TEORETIC GATAIA"  
+    },
+     {
+       "id":221,
+       "judet": "Timis",
+       "scoala": "LICEUL TEORETIC GRIGORE MOISIL"  
+    },
+     {
+       "id":222,
+       "judet": "Timis",
+       "scoala": "LICEUL TEORETIC IOAN JEBELEAN"  
+    },
+     {
+       "id":223,
+       "judet": "Timis",
+       "scoala": "LICEUL TEORETIC JEAN LOUIS CALDERON"  
     }
-
-   
+  
   ]  
    
    
