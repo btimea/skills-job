@@ -16,7 +16,7 @@ var app = angular.module('myApp.login', ['ui.router','firebase'])
 
 app.factory("Auth", ["$firebaseAuth",
   function($firebaseAuth) {
-    var ref = new Firebase("https://skillsjobs.firebaseio.com");
+    var ref = new Firebase("https://burning-heat-5959.firebaseio.com");
     return $firebaseAuth(ref);
   }
 ]);
@@ -26,7 +26,7 @@ app.factory("Auth", ["$firebaseAuth",
 app.controller('LoginCtrl', ['$scope','$rootScope','$location','$firebaseAuth','Auth','$state',function($scope,$rootScope,$location,$firebaseAuth,Auth,$state
   ){
 
-	var firebaseObj = new Firebase("https://skillsjobs.firebaseio.com");
+	var firebaseObj = new Firebase("https://burning-heat-5959.firebaseio.com");
 	var loginObj = $firebaseAuth(firebaseObj); 
   $scope.authenticationData = firebaseObj.getAuth();
 

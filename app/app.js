@@ -8,7 +8,8 @@ angular.module('myApp', [
     'myApp.main',
     'myApp.addArticle',
     'myApp.home',
-    'myApp.regulament'
+    'myApp.regulament',
+    'myApp.final'
 ]).
 config(['$urlRouterProvider','growlProvider', function($urlRouterProvider,growlProvider) {
     // Set defualt view of our app to home
