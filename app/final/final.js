@@ -25,13 +25,13 @@ var app = angular.module('myApp.final', ['ui.router',"firebase",'ngSanitize', 'n
 app.controller('FinalCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseArray','$timeout','$http','growl','$state','$q', function($scope,$rootScope,$firebaseObject,$firebaseArray,$timeout,$http,growl,$state,$q) {
   
  
-  var ref2 = new Firebase("https://burning-heat-5959.firebaseio.com/Castigatori");
+  var ref2 = new Firebase("https://skillsjobs.firebaseio.com/Castigatori");
   $scope.castigatori = $firebaseArray(ref2);
 
-  var ref3 = new Firebase("https://burning-heat-5959.firebaseio.com/JudeteExtr");
+  var ref3 = new Firebase("https://skillsjobs.firebaseio.com/JudeteExtr");
   $scope.judeteExtr = $firebaseArray(ref3);
 
-  var ref1 = new Firebase("https://burning-heat-5959.firebaseio.com/Finalisti");
+  var ref1 = new Firebase("https://skillsjobs.firebaseio.com/Finalisti");
   $scope.finalisti = $firebaseArray(ref1);
 
   
@@ -42,7 +42,7 @@ app.controller('FinalCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseA
   $scope.accesValidare = false;
   $scope.startExportare = false;
   $scope.obiect = {};
-  var premii=['Premiul III - 500 lei','Premiul II - 700 lei','Premiul I - 1000 lei']
+  var premii=['Premiul III - 800 lei','Premiul II - 1000 lei','Premiul I - 1500 lei']
  
 
   $http.get('main/scoli.json').success(function(data) {
@@ -60,7 +60,7 @@ app.controller('FinalCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseA
   };
 
    $scope.getHeaderFinalisti = function () {
-    return ["Clasa","CNP", "Data", "Email","Id unic JVIS","Judet","Nume si Prenume","Premiul Vechi","Scoala","Varsta","Id identificare","Idord", "Premiul Nou"]
+    return ["Clasa","CNP", "Data", "Email","Id unic JVIS","Judet","Nume si Prenume","Premiul Vechi","Scoala","Varsta","Id identificare","null","Idord", "Premiul Nou"]
   };
 
   $scope.validareCastigatori = function (){
