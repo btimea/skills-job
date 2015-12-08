@@ -121,6 +121,32 @@
             <div class="m-md m-t-xl text-center">  
 				<p>Intocmit: Ioana Corujan, Expert elaborare si implementare proceduri</p>
 			</div>
+		</div>
+		<div class="col-lg-12">
+			<h1 class="text-center m-b-md">Metodologie extragere</h1>
+			<p>Platforma online "Skills for jobs" realizeaza extragerea in mod aleatoriu a trei castigatori (Premiul I, Premiul II respectiv premiul III) pentru fiecare scoala din program, din totalul de elevi inscisi in competitie.</p>
+			<h4>Modul de realizare a extragerii este urmatorul:</h4>
+			<p>1. Baza de date continand toti elevii participanti, din toate scolile aferente celor sapte judete (Bihor, Bistrita-Nasaud, Cluj, Hunedoara, Maramures, Salaj, Timis) este convertita in formatul de date de tip "json" si incarcata pe platforma cu ajutorul careia este gestionata si securizata</p>
+
+			<p>2. Fiecare "elev" este reprezentat pe platforma virtuala ptintr-un "un obiect de tip json" identificat la randul lui in mod unic de codul "JVIS"</p>
+
+			<p>3. Din interfata platformei, administratorul, dupa logare cu user si parola, realizeaza urmatorii pasi in vederea extragerii:
+				<ul>
+				<li>Selecteza judetul si scoala</li>
+				<li>Afisare elevi pentru validare</li>
+				<li>Export elevi aferenti scolii si judetului selectat</li> 
+				<li>Validare (nu este posibila extragerea fara aceasta operatie care confirma validitatea tuturor datelor din baza de date)</li>
+				<li>Realizarea extragerii</li>
+				<li>Exportul castigatorilor</li>
+			</ul>
+			</p>
+			<p>4. Cei trei castigatori sunt desemnati intr-un mod absolut aleatoriu. Initial in baza de date acestia sunt ordonati intr-o lista, in ordine alfabetica. Folosind numarul unic de indentificare “JVIS” aceasta lista este aleatorizata cu metoda de permutari stocastice Fisher–Yates. Ca urmare a acestei operatii lista este ordonata absolut aleatoriu. </p>
+
+			<p>5. In urma aleatorizarii sunt extrasi cei trei castigatori si salvati in baza de date a castigatorilor</p>
+
+			<p>6. Odata ce extragerea este realizata, aceasta nu mai poate fi efectuata din nou si nici rezultatele nu mai pot fi schimbate.</p>
+
+			<p>7. Utilizatorii care nu detin credentiale de logare au doar posibilitatea de vizualizare a rezultatelor, selectand judetul si scoala pentru care doresc sa afle aceste informatii.</p>
 		</div>	
 	</div>	
 </div> 
