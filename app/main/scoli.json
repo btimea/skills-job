@@ -170,14 +170,8 @@
        "id":120,
        "judet": "Bistrita-Nasaud",
        "scoala": "COLEGIUL NATIONAL PETRU RARES"  
-    }
-     ,
-     {
-       "id":120,
-       "judet": "Bistrita-Nasaud",
-       "scoala": "COLEGIUL NATIONAL PETRU RARES"  
-    }
-     ,
+    },
+     
      {
        "id":121,
        "judet": "Cluj",
@@ -199,7 +193,7 @@
      {
        "id":124,
        "judet": "Cluj",
-       "scoala": "COLEGIUL NATIONAL \"EMIL RACOVITA\" CLUJ-NAPOCA"  
+       "scoala": "COLEGIUL NATIONAL EMIL RACOVITA CLUJ-NAPOCA"  
     }
      ,
      {
@@ -492,6 +486,11 @@
        "id":178,
        "judet": "Cluj",
        "scoala": "SEMINARUL TEOLOGIC ORTODOX CLUJ-NAPOCA"  
+    },
+      {
+       "id":179,
+       "judet": "Bihor",
+       "scoala": "COLEGIUL NATIONAL MIHAI EMINESCU"  
     },
      {
        "id":179,

@@ -40,7 +40,7 @@ app.controller('MainCtrl', ['$scope','$rootScope','$firebaseObject','$firebaseAr
   $scope.accesValidare = false;
   $scope.startExportare = false;
   $scope.obiect = {};
-  var premii=['Premiul III - 500 lei','Premiul II - 700 lei','Premiul I - 1000 lei']
+  var premii=['Premiul I - 1000 lei','Premiul II - 700 lei','Premiul III - 500 lei']
  
 
   $http.get('main/scoli.json').success(function(data) {
